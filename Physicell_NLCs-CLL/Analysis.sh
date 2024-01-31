@@ -4,7 +4,7 @@
 INPUT = "./config/NLC_CLL.xml"
 
 # Define the number of samples to generate for the LHS analysis
-NUM_SAMPLES = 20
+NUM_SAMPLES = 3
 
 # Define the number of nodes used to parallelize the analysis
 NUM_NODES = 3

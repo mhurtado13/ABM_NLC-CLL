@@ -13,10 +13,12 @@ samples_lhs = pd.read_csv('lhs_samples.csv')
 tree = ET.parse(input_file_path)
 root = tree.getroot()
 
-param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1, "relative_maximum_adhesion_distance": 2, 
-               "cell_BM_adhesion_strength": 3, "speed": 4, "migration_bias": 5, "secretion_rate": 6, "fluid_change_rate":7}
+#param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1, "relative_maximum_adhesion_distance": 2, 
+#               "cell_BM_adhesion_strength": 3, "speed": 4, "migration_bias": 5, "secretion_rate": 6, "fluid_change_rate":7}
 
-replicates = 20 #For bootstrapping
+param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
+
+replicates = 2 #For bootstrapping
 # Loop over each iteration in the LHS data
 for i, lhs_iteration in enumerate(samples_lhs): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
 # Loop over each parameter and update its value in the XML file
