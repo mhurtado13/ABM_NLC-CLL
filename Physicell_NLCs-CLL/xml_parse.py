@@ -1,11 +1,16 @@
 import xml.etree.ElementTree as ET
 import subprocess
+import pandas as pd
+import sys
+
+input_file_path = sys.argv[1]
 
 #Load samples from LHS or Sobol
 samples_lhs = pd.read_csv('lhs_samples.csv')
-samples_sobol = pd.read_csv('sobol_samples.csv')
+#samples_sobol = pd.read_csv('sobol_samples.csv')
+
 #Load xml file
-tree = ET.parse('output/PhysiCell_settings.xml')
+tree = ET.parse(input_file_path)
 root = tree.getroot()
 
 param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1, "relative_maximum_adhesion_distance": 2, 

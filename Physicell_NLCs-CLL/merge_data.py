@@ -1,3 +1,6 @@
+import pandas as pd
+import os
+
 df = pd.read_csv('data.csv')
 
 # Calculate the column-wise median

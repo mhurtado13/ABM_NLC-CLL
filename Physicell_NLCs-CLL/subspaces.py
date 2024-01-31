@@ -1,5 +1,11 @@
+
+import pandas as pd 
+import sys
+
+num_files = int(sys.argv[1])
+
 data = pd.read_csv('lhs_samples.csv')
-num_files = 4
+
 rows = int(len(data)/num_files)
 
 # Loop over the number of output files to generate
@@ -16,5 +22,5 @@ for i in range(num_files):
     subset = data.iloc[start_idx:end_idx]
 
     # Write the rows to a new CSV file
-    filename = f'saltelli_samples_{i}.csv'
+    filename = f'lhs_samples_{i}.csv'
     subset.to_csv(filename, index=False)
