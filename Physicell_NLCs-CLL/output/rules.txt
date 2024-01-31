@@ -1,0 +1,18 @@
+Cell Hypothesis Rules
+
+In cancer cells cells:
+pressure decreases cycle entry
+anti-apoptotic factor decreases transform to apoptotic
+
+In monocytes cells:
+pressure decreases cycle entry
+time increases transform to macrophages
+
+In macrophages cells:
+time increases transform to NLCs
+
+In NLCs cells:
+
+In apoptotic cells:
+dead increases debris secretion
+
