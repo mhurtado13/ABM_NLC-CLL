@@ -3,18 +3,47 @@ import os
 
 df = pd.read_csv('data.csv')
 
+#####Viability
+
 # Calculate the column-wise median
-medians = df.median()
+num_lis = []
+for i in range(1, df.shape[1],2):
+    number = df.iloc[:, i]
+    num_lis.append(number)
+    
+num_lis = pd.DataFrame(num_lis)
+medians = num_lis.median()
 
 # Create a new DataFrame with the averages
-medians_df = pd.DataFrame(medians).T
-output_csv = 'output.csv'
-# Write the averages DataFrame to a new CSV file
-medians_df.to_csv('averages.csv', index=False)
+viability = pd.DataFrame(medians)
+viability_csv = 'viability.csv'
 
-if os.path.exists(output_csv):
-    old_data = pd.read_csv(output_csv)
-    new_data = pd.concat([old_data, medians_df], axis=0, ignore_index=True)
-    new_data.to_csv(output_csv, index=False, header=True)
+if os.path.exists(viability_csv):
+    old_data = pd.read_csv(viability_csv)
+    new_data = pd.concat([old_data, viability], axis=0, ignore_index=True)
+    new_data.to_csv(viability_csv, index=False, header=True)
 else:
-    medians_df.to_csv(output_csv, index=False, header=True)
+    viability.to_csv(viability_csv, index=False, header=True)
+
+
+#####Concentration
+    
+# Calculate the column-wise median
+num_lis = []
+for i in range(2, df.shape[1],2):
+    number = df.iloc[:, i]
+    num_lis.append(number)
+    
+num_lis = pd.DataFrame(num_lis)
+medians = num_lis.median()
+
+# Create a new DataFrame with the averages
+concentration = pd.DataFrame(medians)
+concentration_csv = 'concentration.csv'
+
+if os.path.exists(concentration_csv):
+    old_data = pd.read_csv(concentration_csv)
+    new_data = pd.concat([old_data, concentration], axis=0, ignore_index=True)
+    new_data.to_csv(concentration_csv, index=False, header=True)
+else:
+    concentration.to_csv(concentration_csv, index=False, header=True)
