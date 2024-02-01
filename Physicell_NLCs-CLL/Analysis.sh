@@ -10,10 +10,10 @@ NUM_SAMPLES=3
 NUM_NODES=3
 
 # Generate the samples using a Python script
-python sampling.py $NUM_SAMPLES
+python scripts/sampling.py $NUM_SAMPLES
 
 # Split the sample so that you can run multiple instances on different nodes
-python subspaces.py $NUM_NODES
+python scripts/subspaces.py $NUM_NODES
 
 # Loop over the LHS samples and run Physicell with each parameter set
-python xml_parse.py $INPUT
+python scripts/xml_parse.py $INPUT

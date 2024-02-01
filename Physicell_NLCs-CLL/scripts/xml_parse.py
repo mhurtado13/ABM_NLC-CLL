@@ -6,7 +6,7 @@ import sys
 input_file_path = sys.argv[1]
 
 #Load samples from LHS or Sobol
-samples_lhs = pd.read_csv('lhs_samples.csv')
+samples_lhs = pd.read_csv('../data_output/lhs_samples.csv')
 #samples_sobol = pd.read_csv('sobol_samples.csv')
 
 #Load xml file

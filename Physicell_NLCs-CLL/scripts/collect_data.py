@@ -53,7 +53,7 @@ concentration = pd.Series(concentration, name = "CLL concentration")
 
 df = pd.concat([viability, concentration], axis=1)
 
-file_csv = 'data.csv'
+file_csv = '../data_output/data.csv'
 
 #If the file already exists
 if os.path.exists(file_csv):

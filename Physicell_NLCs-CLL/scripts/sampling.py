@@ -43,5 +43,5 @@ lhs_samples = pd.DataFrame(lhs_samples, columns=param_names)
 #sobol_samples = pd.DataFrame(sobol_samples, columns=param_names)
 
 #Save output
-lhs_samples.to_csv('lhs_samples.csv', index=False)
+lhs_samples.to_csv('../data_output/lhs_samples.csv', index=False)
 #sobol_samples.to_csv('sobol_samples.csv', index=False)
