@@ -49,4 +49,8 @@ for i, lhs_iteration in enumerate(samples_lhs): #Taking rows where i = row numbe
         subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
 
     subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
-    print("Next set") #Continue to next row 
+
+    if i == samples_lhs.shape[0]:
+        print("Analysis done :)")
+    else:
+        print("Next set") #Continue to next row 

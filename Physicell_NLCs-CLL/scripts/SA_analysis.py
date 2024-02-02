@@ -1,9 +1,9 @@
 from SALib.analyze import sobol ##sobol is a type of SA analysis implemented in SALib
 from SALib.sample import saltelli
 from SALib.sample import latin
-
 import pandas as pd
 import numpy as np
+from SALib.analyze import rbd_fast
 
 # Number of parameters
 nparams = 2 
@@ -33,11 +33,12 @@ problem = {
 }
 
 #Sampling
+samples_lhs = np.loadtxt('../data_output/lhs_samples.csv', delimiter=",", skiprows=1)
 #param_values =  latin.sample(problem, 3)
-param_values = saltelli.sample(problem, 2, calc_second_order=False)
+#param_values = saltelli.sample(problem, 2, calc_second_order=False)
 
 #Read output of simulation
-output = pd.read_csv('../data_output/viability.csv', index_col=0)
+output = pd.read_csv('../data_output/viability.csv', index_col=0).to_numpy()
 
 # Calculate the correlation matrix
 corr_matrix = np.corrcoef(output.to_numpy().T)
@@ -45,10 +46,11 @@ corr_matrix = np.corrcoef(output.to_numpy().T)
 # Perform analysis: Compute sensitivity indices
 output = output.iloc[0:8,1].values
 
-Si = sobol.analyze(problem, output, print_to_console=True, calc_second_order=False) 
+Si = sobol.analyze(problem, output, print_to_console=True) 
 # Print the first-order and total sensitivity indices for each parameter
 print('Sobol Analysis Results:')
 for i, param in enumerate(problem['names']):
    print(f"{param}: S1={Si['S1'][i]:.3f}, ST={Si['ST'][i]:.3f}")
 
-
+#https://stackoverflow.com/questions/55634208/does-salib-sensitivity-analysis-package-support-only-one-column-vector-input
+#https://notebook.community/locie/locie_notebook/misc/Sensitivity_analysis   

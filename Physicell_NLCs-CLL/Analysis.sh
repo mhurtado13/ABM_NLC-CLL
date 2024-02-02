@@ -4,10 +4,10 @@
 INPUT="./config/NLC_CLL.xml"
 
 # Define the number of samples to generate for the LHS analysis
-NUM_SAMPLES=3
+NUM_SAMPLES=2
 
 # Define the number of nodes used to parallelize the analysis
-NUM_NODES=3
+NUM_NODES=1
 
 # Generate the samples using a Python script
 python scripts/sampling.py $NUM_SAMPLES
