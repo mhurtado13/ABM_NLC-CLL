@@ -2,12 +2,13 @@ import xml.etree.ElementTree as ET
 import subprocess
 import pandas as pd
 import sys
+import numpy as np
 
 input_file_path = sys.argv[1]
 
 #Load samples from LHS or Sobol
-samples_lhs = pd.read_csv('../data_output/lhs_samples.csv')
-#samples_sobol = pd.read_csv('sobol_samples.csv')
+samples_lhs = np.loadtxt('data_output/lhs_samples.csv', delimiter=",", skiprows=1)
+#sobol_samples = pd.read_csv('../data_output/sobol_samples.csv')
 
 #Load xml file
 tree = ET.parse(input_file_path)
@@ -45,7 +46,7 @@ for i, lhs_iteration in enumerate(samples_lhs): #Taking rows where i = row numbe
             print(stderr.decode())
             continue
 
-        subprocess.run(["python", "collect_data.py"]) #We collect the data at each iteration
+        subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
 
-    subprocess.run(["python", "merge_data.py"]) #Merge data of replicates 
+    subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
     print("Next set") #Continue to next row 

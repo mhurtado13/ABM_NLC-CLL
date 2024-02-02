@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-df = pd.read_csv('../data_output/data.csv')
+df = pd.read_csv('data_output/data.csv')
 
 #####Viability
 
@@ -16,7 +16,7 @@ medians = num_lis.median()
 
 # Create a new DataFrame with the averages
 viability = pd.Series(medians, name = "viability")
-viability_csv = '../data_output/viability.csv'
+viability_csv = 'data_output/viability.csv'
 
 if os.path.exists(viability_csv):
     old_data = pd.read_csv(viability_csv)
@@ -39,7 +39,7 @@ medians = num_lis.median()
 
 # Create a new DataFrame with the averages
 concentration = pd.Series(medians, name = "concentration")
-concentration_csv = '../data_output/concentration.csv'
+concentration_csv = 'data_output/concentration.csv'
 
 if os.path.exists(concentration_csv):
     old_data = pd.read_csv(concentration_csv)
