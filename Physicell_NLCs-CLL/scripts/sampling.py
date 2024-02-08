@@ -40,4 +40,4 @@ param_names = list(param_ranges.keys())
 sobol_samples = pd.DataFrame(sobol_samples, columns=param_names)
 
 #Save output
-sobol_samples.to_csv('../data_output/sobol_samples.csv', index=False)
+sobol_samples.to_csv('data_output/sobol_samples.csv', index=False)
