@@ -4,8 +4,7 @@ import sys
 
 num_files = int(sys.argv[1])
 
-data = pd.read_csv('data_output/lhs_samples.csv')
-#data = pd.read_csv('../data_output/sobol_samples.csv')
+data = pd.read_csv('data_output/sobol_samples.csv')
 
 rows = int(len(data)/num_files)
 
@@ -23,5 +22,5 @@ for i in range(num_files):
     subset = data.iloc[start_idx:end_idx]
 
     # Write the rows to a new CSV file
-    filename = f'data_output/lhs_samples_{i}.csv'
+    filename = f'data_output/sobol_samples_{i}.csv'
     subset.to_csv(filename, index=False)
