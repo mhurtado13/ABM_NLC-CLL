@@ -7,8 +7,7 @@ import numpy as np
 input_file_path = sys.argv[1]
 
 #Load samples from LHS or Sobol
-samples_lhs = np.loadtxt('data_output/lhs_samples.csv', delimiter=",", skiprows=1)
-#sobol_samples = pd.read_csv('../data_output/sobol_samples.csv')
+samples_sobol = np.loadtxt('data_output/sobol_samples.csv', delimiter=",", skiprows=1)
 
 #Load xml file
 tree = ET.parse(input_file_path)
@@ -19,15 +18,20 @@ root = tree.getroot()
 
 param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
 
-replicates = 2 #For bootstrapping
+replicates = 5 #For bootstrapping
+
 # Loop over each iteration in the LHS data
-for i, lhs_iteration in enumerate(samples_lhs): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
+for i, lhs_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
 # Loop over each parameter and update its value in the XML file
     for param_name, lhs_col_index in param_names.items(): # param_name = parameter name and lhs_col_index = column number
         param_value = lhs_iteration[lhs_col_index] #Extract each value [i, lhs_col_index]
-        param_element = root.find(f".//{param_name}") #Find the param name in XML file
-        param_element.text = str(param_value) #Update the text of xml file with extracted value 
+        param_elements = root.findall(f".//{param_name}") #Find the param name in XML file
+        for param_element in param_elements:
+            param_element.text = str(param_value) #Update the text of xml file with extracted value 
 
+    #To fix: root.find is not finding all elements that match with param_name, only is replacing in the first one (FIX!)
+    #if updated_xml_str is outside this for is because all the set of input variables are being replacing in the xml file at once
+        
     # Write the updated XML to a string
     updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
 
@@ -46,11 +50,16 @@ for i, lhs_iteration in enumerate(samples_lhs): #Taking rows where i = row numbe
             print(stderr.decode())
             continue
 
-        subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
+        subprocess.run(["python", "collect_data.py"]) #We collect the data at each iteration
 
+<<<<<<< HEAD
+    subprocess.run(["python", "merge_data.py"]) #Merge data of replicates 
+    print("Next set") #Continue to next row 
+=======
     subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
 
     if i == samples_lhs.shape[0]:
         print("Analysis done :)")
     else:
         print("Next set") #Continue to next row 
+>>>>>>> 51dc58d4c5b2ef5350b35ef8126e0bc0142ea0ff

@@ -33,15 +33,11 @@ problem = {
     'bounds': [[1, 10], [0, 0.6]] 
 }
 
-#Generate Latin hypercube samples
-lhs_samples = latin.sample(problem, nsamples)
 #Generate sobol samples
-#sobol_samples = sobol.sample(problem, nsamples)
+sobol_samples = sobol.sample(problem, nsamples)
 
 param_names = list(param_ranges.keys())
-lhs_samples = pd.DataFrame(lhs_samples, columns=param_names)
-#sobol_samples = pd.DataFrame(sobol_samples, columns=param_names)
+sobol_samples = pd.DataFrame(sobol_samples, columns=param_names)
 
 #Save output
-lhs_samples.to_csv('data_output/lhs_samples.csv', index=False)
-#sobol_samples.to_csv('../data_output/sobol_samples.csv', index=False)
+sobol_samples.to_csv('../data_output/sobol_samples.csv', index=False)
