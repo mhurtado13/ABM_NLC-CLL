@@ -18,7 +18,7 @@ root = tree.getroot()
 
 param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
 
-replicates = 5 #For bootstrapping
+replicates = 4 #For bootstrapping
 
 # Loop over each iteration in the LHS data
 for i, lhs_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
@@ -50,16 +50,7 @@ for i, lhs_iteration in enumerate(samples_sobol): #Taking rows where i = row num
             print(stderr.decode())
             continue
 
-        subprocess.run(["python", "collect_data.py"]) #We collect the data at each iteration
+        subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
 
-<<<<<<< HEAD
-    subprocess.run(["python", "merge_data.py"]) #Merge data of replicates 
-    print("Next set") #Continue to next row 
-=======
     subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
-
-    if i == samples_lhs.shape[0]:
-        print("Analysis done :)")
-    else:
-        print("Next set") #Continue to next row 
->>>>>>> 51dc58d4c5b2ef5350b35ef8126e0bc0142ea0ff
+    print("Next set") #Continue to next row 
