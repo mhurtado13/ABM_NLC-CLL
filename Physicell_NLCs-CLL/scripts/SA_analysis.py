@@ -1,9 +1,7 @@
 from SALib.analyze import sobol ##sobol is a type of SA analysis implemented in SALib
-from SALib.sample import saltelli
-from SALib.sample import latin
 import pandas as pd
 import numpy as np
-from SALib.analyze import rbd_fast
+import matplotlib.pyplot as plt
 
 # Number of parameters
 nparams = 2 
@@ -32,25 +30,25 @@ problem = {
     'bounds': [[1, 10], [0, 0.6]] 
 }
 
-#Sampling
-samples_lhs = np.loadtxt('../data_output/lhs_samples.csv', delimiter=",", skiprows=1)
-#param_values =  latin.sample(problem, 3)
-#param_values = saltelli.sample(problem, 2, calc_second_order=False)
+#Samples
+samples_sobol = np.loadtxt('../data_output/sobol_samples.csv', delimiter=",", skiprows=1)
 
 #Read output of simulation
-output = pd.read_csv('../data_output/viability.csv', index_col=0).to_numpy()
+output = np.loadtxt('../data_output/viability.csv', delimiter=",", skiprows=1)
 
-# Calculate the correlation matrix
-corr_matrix = np.corrcoef(output.to_numpy().T)
+#Take the median of output (as it's time series data)
+output_median = np.median(output, axis=0)
 
-# Perform analysis: Compute sensitivity indices
-output = output.iloc[0:8,1].values
+# Sobol analysis
+Si = sobol.analyze(problem, output_median, print_to_console=True, calc_second_order=True) 
 
-Si = sobol.analyze(problem, output, print_to_console=True) 
-# Print the first-order and total sensitivity indices for each parameter
 print('Sobol Analysis Results:')
 for i, param in enumerate(problem['names']):
    print(f"{param}: S1={Si['S1'][i]:.3f}, ST={Si['ST'][i]:.3f}")
 
-#https://stackoverflow.com/questions/55634208/does-salib-sensitivity-analysis-package-support-only-one-column-vector-input
-#https://notebook.community/locie/locie_notebook/misc/Sensitivity_analysis   
+# Plotting results
+axes = Si.plot()
+axes[0].set_yscale('log')
+fig = plt.gcf()  # get current figure
+fig.set_size_inches(10, 4)
+plt.tight_layout()

@@ -6,9 +6,6 @@ import sys
 # Number of Samples
 nsamples = int(sys.argv[1]) 
 
-# Number of parameters
-nparams = 2 
-
 #Ranges for each parameter
 #param_ranges = {
 #    'cell_cell_repulsion_strength': [0, 75],
@@ -21,22 +18,19 @@ nparams = 2
 #    'fluid_change_rate': [0, 100]
 #}
 
-param_ranges = {
-    'cell_cell_repulsion_strength': [1, 10],
-    'cell_cell_adhesion_strength': [0, 0.6]
-}
+default_values = {'cell_cell_repulsion_strength': 0.15, 'cell_cell_adhesion_strength': 1.0}
 
 #Define the problem for SALib
 problem = {
-    'num_vars': nparams,
-    'names': list(param_ranges.keys()),
-    'bounds': [[1, 10], [0, 0.6]] 
+    'num_vars': len(default_values),
+    'names': default_values.keys(),
+    'bounds': np.array([[0,0],[0.3,2.0]]).T # 100% percent of variation from default values 
 }
 
 #Generate sobol samples
 sobol_samples = sobol.sample(problem, nsamples)
 
-param_names = list(param_ranges.keys())
+param_names = list(default_values.keys())
 sobol_samples = pd.DataFrame(sobol_samples, columns=param_names)
 
 #Save output

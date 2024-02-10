@@ -3,7 +3,7 @@
 # Define the paths to the input XML file and the C++ software executable
 INPUT="./config/NLC_CLL.xml"
 
-# Define the number of samples to generate for the LHS analysis
+# Define the number of samples to generate for the Sobol analysis
 NUM_SAMPLES=8
 
 # Define the number of nodes used to parallelize the analysis
