@@ -1,6 +1,0 @@
-cancer cells,pressure,decreases,cycle entry,0,0,1,4,0
-cancer cells,anti-apoptotic factor,decreases,transform to apoptotic,5e-05,5e-06,0.5,10,0
-monocytes,pressure,decreases,cycle entry,0,0,1,4,0
-monocytes,time,increases,transform to macrophages,0,0.0005,2940,30,0
-macrophages,time,increases,transform to NLCs,0,0.0005,3000,30,0
-apoptotic,dead,increases,debris secretion,1,1,0.5,20,0

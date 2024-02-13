@@ -13,24 +13,35 @@ samples_sobol = np.loadtxt('data_output/sobol_samples.csv', delimiter=",", skipr
 tree = ET.parse(input_file_path)
 root = tree.getroot()
 
-#param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1, "relative_maximum_adhesion_distance": 2, 
-#               "cell_BM_adhesion_strength": 3, "speed": 4, "migration_bias": 5, "secretion_rate": 6, "fluid_change_rate":7}
+param_behaviors = {'cancer':{'uptake_rate': 0, 'speed': 1, 'transformation_rate': 2},
+                   'monocytes':{'speed': 3, 'dead_phagocytosis_rate': 4},
+                   'macrophages':{'speed': 5, 'dead_phagocytosis_rate': 6},
+                   'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
 
-param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
+#param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
 
 replicates = 4 #For bootstrapping
 
 # Loop over each iteration in the LHS data
-for i, lhs_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
-# Loop over each parameter and update its value in the XML file
-    for param_name, lhs_col_index in param_names.items(): # param_name = parameter name and lhs_col_index = column number
-        param_value = lhs_iteration[lhs_col_index] #Extract each value [i, lhs_col_index]
-        param_elements = root.findall(f".//{param_name}") #Find the param name in XML file
-        for param_element in param_elements:
-            param_element.text = str(param_value) #Update the text of xml file with extracted value 
-
-    #To fix: root.find is not finding all elements that match with param_name, only is replacing in the first one (FIX!)
-    #if updated_xml_str is outside this for is because all the set of input variables are being replacing in the xml file at once
+for i, sobol_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
+    for celltype, celltype_param in param_behaviors.items(): #param_name = parameter name and lhs_col_index = column number
+        for param, column in celltype_param.items():
+            if(celltype == 'cancer' and param == 'uptake_rate'):
+                param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
+            elif(celltype == 'cancer' and param == 'transformation_rate'):
+                param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//{param}/[@name='apoptotic']") #Find the param name in XML file
+                param_element.text = str(param_value)
+            elif(celltype == 'NLCs' and param == 'secretion_rate'):
+                param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
+            else:
+                param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
         
     # Write the updated XML to a string
     updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")

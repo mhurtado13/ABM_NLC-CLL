@@ -6,25 +6,17 @@ import sys
 # Number of Samples
 nsamples = int(sys.argv[1]) 
 
-#Ranges for each parameter
-#param_ranges = {
-#    'cell_cell_repulsion_strength': [0, 75],
-#    'cell_cell_adhesion_strength': [0, 2],
-#    'relative_maximum_adhesion_distance': [0, 3.5],
-#    'cell_BM_adhesion_strength': [0, 1],
-#    'speed': [0, 1],
-#    'migration_bias': [0, 1],
-#    'secretion_rate': [0, 1],
-#    'fluid_change_rate': [0, 100]
-#}
-
-default_values = {'cell_cell_repulsion_strength': 0.15, 'cell_cell_adhesion_strength': 1.0}
+default_values = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_cancer': 5e-5,
+                  'speed_monocytes':1.0, 'dead_phagocytosis_rate_monocytes':25e-2, 'speed_macrophages':1.0,
+                  'dead_phagocytosis_rate_macrophages':92e-2, 'secretion_rate_NLCs':1.0, 'speed_NLCs':1.0,
+                  'dead_phagocytosis_rate_NLCs':4e-2}
 
 #Define the problem for SALib
 problem = {
     'num_vars': len(default_values),
     'names': default_values.keys(),
-    'bounds': np.array([[0,0],[0.3,2.0]]).T # 100% percent of variation from default values 
+    'bounds': np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [2.0, 2.0, 10e-5, 2.0, 50e-2, 2.0, 184e-2, 2.0, 2.0, 8e-2]]).T # 100% percent of variation from default values 
 }
 
 #Generate sobol samples

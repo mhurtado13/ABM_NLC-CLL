@@ -98,7 +98,7 @@
     </microenvironment_setup>
 
     <cell_definitions>
-        <cell_definition name="cancer cells" ID="0">
+        <cell_definition name="cancer" ID="0">
             <phenotype>
                 <cycle code="5" name="live">
                     <phase_transition_rates units="1/min">
@@ -152,7 +152,7 @@
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
-                        <cell_adhesion_affinity name="cancer cells">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="cancer">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="monocytes">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="macrophages">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="NLCs">0</cell_adhesion_affinity>
@@ -205,14 +205,14 @@
                 <cell_interactions>
                     <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="cancer cells" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="cancer" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="monocytes" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="macrophages" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="NLCs" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="apoptotic" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="cancer cells" units="1/min">0</attack_rate>
+                        <attack_rate name="cancer" units="1/min">0</attack_rate>
                         <attack_rate name="monocytes" units="1/min">0.0</attack_rate>
                         <attack_rate name="macrophages" units="1/min">0</attack_rate>
                         <attack_rate name="NLCs" units="1/min">0</attack_rate>
@@ -220,7 +220,7 @@
                     </attack_rates>
                     <damage_rate units="1/min">0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="cancer cells" units="1/min">0</fusion_rate>
+                        <fusion_rate name="cancer" units="1/min">0</fusion_rate>
                         <fusion_rate name="monocytes" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophages" units="1/min">0</fusion_rate>
                         <fusion_rate name="NLCs" units="1/min">0</fusion_rate>
@@ -229,7 +229,7 @@
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="cancer cells" units="1/min">0</transformation_rate>
+                        <transformation_rate name="cancer" units="1/min">0</transformation_rate>
                         <transformation_rate name="monocytes" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="macrophages" units="1/min">0</transformation_rate>
                         <transformation_rate name="NLCs" units="1/min">0</transformation_rate>
@@ -295,7 +295,7 @@
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
-                        <cell_adhesion_affinity name="cancer cells">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="cancer">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="monocytes">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="macrophages">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="NLCs">0</cell_adhesion_affinity>
@@ -348,14 +348,14 @@
                 <cell_interactions>
                     <dead_phagocytosis_rate units="1/min">25e-2</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="cancer cells" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="cancer" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="monocytes" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="macrophages" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="NLCs" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="apoptotic" units="1/min">25e-2</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="cancer cells" units="1/min">0.0</attack_rate>
+                        <attack_rate name="cancer" units="1/min">0.0</attack_rate>
                         <attack_rate name="monocytes" units="1/min">0.0</attack_rate>
                         <attack_rate name="macrophages" units="1/min">0.0</attack_rate>
                         <attack_rate name="NLCs" units="1/min">0.0</attack_rate>
@@ -363,7 +363,7 @@
                     </attack_rates>
                     <damage_rate units="1/min">0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="cancer cells" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="cancer" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="monocytes" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophages" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="NLCs" units="1/min">0.0</fusion_rate>
@@ -372,7 +372,7 @@
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="cancer cells" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="cancer" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="monocytes" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="macrophages" units="1/min">0</transformation_rate>
                         <transformation_rate name="NLCs" units="1/min">0.0</transformation_rate>
@@ -438,7 +438,7 @@
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.5</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
-                        <cell_adhesion_affinity name="cancer cells">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="cancer">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="monocytes">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="macrophages">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="NLCs">0</cell_adhesion_affinity>
@@ -491,14 +491,14 @@
                 <cell_interactions>
                     <dead_phagocytosis_rate units="1/min">92e-2</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="cancer cells" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="cancer" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="monocytes" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="macrophages" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="NLCs" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="apoptotic" units="1/min">92e-2</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="cancer cells" units="1/min">0</attack_rate>
+                        <attack_rate name="cancer" units="1/min">0</attack_rate>
                         <attack_rate name="monocytes" units="1/min">0.0</attack_rate>
                         <attack_rate name="macrophages" units="1/min">0</attack_rate>
                         <attack_rate name="NLCs" units="1/min">0</attack_rate>
@@ -506,7 +506,7 @@
                     </attack_rates>
                     <damage_rate units="1/min">0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="cancer cells" units="1/min">0</fusion_rate>
+                        <fusion_rate name="cancer" units="1/min">0</fusion_rate>
                         <fusion_rate name="monocytes" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophages" units="1/min">0</fusion_rate>
                         <fusion_rate name="NLCs" units="1/min">0</fusion_rate>
@@ -515,7 +515,7 @@
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="cancer cells" units="1/min">0</transformation_rate>
+                        <transformation_rate name="cancer" units="1/min">0</transformation_rate>
                         <transformation_rate name="monocytes" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="macrophages" units="1/min">0</transformation_rate>
                         <transformation_rate name="NLCs" units="1/min">0</transformation_rate>
@@ -581,7 +581,7 @@
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.5</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
-                        <cell_adhesion_affinity name="cancer cells">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="cancer">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="monocytes">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="macrophages">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="NLCs">0</cell_adhesion_affinity>
@@ -634,14 +634,14 @@
                 <cell_interactions>
                     <dead_phagocytosis_rate units="1/min">4e-2</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="cancer cells" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="cancer" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="monocytes" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="macrophages" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="NLCs" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="apoptotic" units="1/min">4e-2</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="cancer cells" units="1/min">0</attack_rate>
+                        <attack_rate name="cancer" units="1/min">0</attack_rate>
                         <attack_rate name="monocytes" units="1/min">0.0</attack_rate>
                         <attack_rate name="macrophages" units="1/min">0</attack_rate>
                         <attack_rate name="NLCs" units="1/min">0</attack_rate>
@@ -649,7 +649,7 @@
                     </attack_rates>
                     <damage_rate units="1/min">0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="cancer cells" units="1/min">0</fusion_rate>
+                        <fusion_rate name="cancer" units="1/min">0</fusion_rate>
                         <fusion_rate name="monocytes" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophages" units="1/min">0</fusion_rate>
                         <fusion_rate name="NLCs" units="1/min">0</fusion_rate>
@@ -658,7 +658,7 @@
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="cancer cells" units="1/min">0</transformation_rate>
+                        <transformation_rate name="cancer" units="1/min">0</transformation_rate>
                         <transformation_rate name="monocytes" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="macrophages" units="1/min">0</transformation_rate>
                         <transformation_rate name="NLCs" units="1/min">0</transformation_rate>
@@ -724,7 +724,7 @@
                     <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
-                        <cell_adhesion_affinity name="cancer cells">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="cancer">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="monocytes">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="macrophages">0</cell_adhesion_affinity>
                         <cell_adhesion_affinity name="NLCs">0</cell_adhesion_affinity>
@@ -777,14 +777,14 @@
                 <cell_interactions>
                     <dead_phagocytosis_rate units="1/min">0.0</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="cancer cells" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="cancer" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="monocytes" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="macrophages" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="NLCs" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="apoptotic" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="cancer cells" units="1/min">0.0</attack_rate>
+                        <attack_rate name="cancer" units="1/min">0.0</attack_rate>
                         <attack_rate name="monocytes" units="1/min">0.0</attack_rate>
                         <attack_rate name="macrophages" units="1/min">0.0</attack_rate>
                         <attack_rate name="NLCs" units="1/min">0.0</attack_rate>
@@ -792,7 +792,7 @@
                     </attack_rates>
                     <damage_rate units="1/min">0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="cancer cells" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="cancer" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="monocytes" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="macrophages" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="NLCs" units="1/min">0.0</fusion_rate>
@@ -801,7 +801,7 @@
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="cancer cells" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="cancer" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="monocytes" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="macrophages" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="NLCs" units="1/min">0.0</transformation_rate>
