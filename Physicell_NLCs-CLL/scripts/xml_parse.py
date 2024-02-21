@@ -7,7 +7,8 @@ import os
 from multiprocessing import Pool
  
 input_file_path = sys.argv[1]
-nodes = sys.argv[2]
+nodes = int(sys.argv[2])
+replicates = int(sys.argv[3]) #For bootstrapping
 
 #Load samples from LHS or Sobol
 #samples_sobol_all = np.loadtxt('data_output/sobol_samples.csv', delimiter=",", skiprows=1)
@@ -39,8 +40,6 @@ def parsing(samples_sobol):
                     'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
 
     #param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
-
-    replicates = 4 #For bootstrapping
 
     # Loop over each iteration in the LHS data
     for i, sobol_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row

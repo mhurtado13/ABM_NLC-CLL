@@ -7,7 +7,10 @@ INPUT="./config/NLC_CLL.xml"
 NUM_SAMPLES=128
 
 # Define the number of nodes used to parallelize the analysis
-NUM_NODES=12
+NUM_NODES=20
+
+# Define the number replicates for bootstrapping 
+NUM_REPLICATES=50
 
 # Generate the samples using a Python script
 python scripts/sampling.py $NUM_SAMPLES
@@ -16,4 +19,4 @@ python scripts/sampling.py $NUM_SAMPLES
 python scripts/subspaces.py $NUM_NODES
 
 # Loop over the LHS samples and run Physicell with each parameter set
-python scripts/xml_parse.py $INPUT $NUM_NODES
+python scripts/xml_parse.py $INPUT $NUM_NODES $NUM_REPLICATES
