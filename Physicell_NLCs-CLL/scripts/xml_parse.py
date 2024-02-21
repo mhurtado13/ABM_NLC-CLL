@@ -10,7 +10,7 @@ input_file_path = sys.argv[1]
 nodes = sys.argv[2]
 
 #Load samples from LHS or Sobol
-samples_sobol_all = np.loadtxt('data_output/sobol_samples.csv', delimiter=",", skiprows=1)
+#samples_sobol_all = np.loadtxt('data_output/sobol_samples.csv', delimiter=",", skiprows=1)
 
 # Folder containing the CSV files
 folder = "data_output/subspaces"
@@ -89,3 +89,6 @@ def parsing(samples_sobol):
 def pool_handler():
     p = Pool(nodes)
     p.map(parsing, dataframes_list)
+
+if __name__ == '__main__':
+    pool_handler()

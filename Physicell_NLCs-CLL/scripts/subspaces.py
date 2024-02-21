@@ -22,5 +22,5 @@ for i in range(num_files):
     subset = data.iloc[start_idx:end_idx]
 
     # Write the rows to a new CSV file
-    filename = f'data_output/sobol_samples_{i}.csv'
+    filename = f'data_output/subspaces/sobol_samples_{i}.csv'
     subset.to_csv(filename, index=False)
