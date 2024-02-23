@@ -4,6 +4,7 @@ import pandas as pd
 import sys
 import numpy as np
 import os
+import random
 from multiprocessing import Pool
  
 input_file_path = sys.argv[1]
@@ -61,15 +62,19 @@ def parsing(samples_sobol):
                     param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
                     param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
-            
-        # Write the updated XML to a string
-        updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
 
         # Define the command to call your C++ software with the updated XML as input
         command = ["./project", "./config/NLC_CLL.xml"]
-        stdin_str = updated_xml_str
-
+        
         for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
+            # Random seed for each simulation
+            param_element = root.findall(".//random_seed") #Find the random seed in XML file
+            param_element.text = random.randint(0,4294967295)
+
+            # Write the updated XML to a string
+            updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
+            stdin_str = updated_xml_str
+
             # Call the C++ software using subprocess
             proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             stdout, stderr = proc.communicate(stdin_str.encode())
