@@ -72,24 +72,24 @@ def model_simulation(input_file_path, replicates, param1, param2, param3, param4
 from pymoo.core.problem import Problem
 import math
 
-experimental = pd.read_csv('../Netlogo_NLCs-CLL/filtered_fused_9patients.csv')
-viability_exp = experimental['viability']
-concentration_exp = experimental['concentration']
+experimental = np.loadtxt('../Netlogo_NLCs-CLL/filtered_fused_9patients.csv', delimiter=",", skiprows=1)
+viability_exp = experimental[:,1]
+concentration_exp = experimental[:,2]
 N = 13
 
 class calibrationProb(Problem):
-    def _init_(self):
-        super()._init_(n_var = 10,
+    def __init__(self):
+        super().__init__(n_var = 10,
                        n_obj = 2,
-                       xl = np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
-                       xu = np.array([2.0, 2.0, 10e-5, 2.0, 50e-2, 2.0, 184e-2, 2.0, 2.0, 8e-2]))
+                       xl = np.array([0.9, 0.9, 4e-5, 0.9, 24e-2, 0.9, 91e-2, 0.9, 0.9, 3e-2]),
+                       xu = np.array([1.2, 1.2, 6e-5, 1.2, 26e-2, 1.2, 93e-2, 1.2, 1.2, 5e-2]))
         
     def _evaluate(self, x, out):
-        viability, concentration = model_simulation("./config/NLC_CLL.xml", 3, x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9])
+        viability, concentration = model_simulation("./config/NLC_CLL.xml", 1, x[:,0], x[:,1], x[:,2], x[:,3], x[:,4], x[:,5], x[:,6], x[:,7], x[:,8], x[:,9])
 
         #Objective functions
-        obj1 = math.sqrt(((viability - viability_exp)**2)/N) #RMSE of viability
-        obj2 = math.sqrt(((concentration - concentration_exp)**2)/N) #RMSE of concentration
+        obj1 = np.sqrt(np.sum((viability - viability_exp)**2) / N) #RMSE of viability
+        obj2 = np.sqrt(np.sum((concentration - concentration_exp)**2) / N) #RMSE of concentration
 
         #Stacking objectives to "F" 
         out["F"] = np.column_stack([obj1, obj2])
@@ -100,11 +100,16 @@ NLC_problem = calibrationProb()
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.optimize import minimize
 
-algorithm_nsga = NSGA2(pop_size=100)
+algorithm_nsga = NSGA2(pop_size=500)
 
-res = minimize(problem= NLC_problem,
-               algorithm=algorithm_nsga,
+from pymoo.termination import get_termination
+termination = get_termination("n_gen", 1000)
+
+res = minimize(NLC_problem,
+               algorithm_nsga,
+               termination,
                seed=1,
-               verbose=False)
+               verbose=True)
 
 print(res.X)
+print(res.F)
