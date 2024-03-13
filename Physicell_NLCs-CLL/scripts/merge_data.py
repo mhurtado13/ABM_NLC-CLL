@@ -23,7 +23,7 @@ if os.path.exists(viability_csv):
     new_data = pd.concat([old_data, viability], axis=1)
     new_data.to_csv(viability_csv, index=False, header=True)
 else:
-    viability.to_csv(viability_csv, index=True, header=True)
+    viability.to_csv(viability_csv, index=False, header=True)
 
 
 #####Concentration
@@ -46,6 +46,6 @@ if os.path.exists(concentration_csv):
     new_data = pd.concat([old_data, concentration], axis=1)
     new_data.to_csv(concentration_csv, index=False, header=True)
 else:
-    concentration.to_csv(concentration_csv, index=True, header=True)
+    concentration.to_csv(concentration_csv, index=False, header=True)
 
 
