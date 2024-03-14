@@ -7,30 +7,28 @@ import os
 import random
 from multiprocessing import Pool
 
-def model_simulation(input_file_path, replicates, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10):                
-    #Load xml file
-    tree = ET.parse(input_file_path)
+def model_simulation(input_file_path, replicates, *args):                
+    
+    tree = ET.parse(input_file_path) #Load xml file
     root = tree.getroot()
-    #Inputs
-    inputs = np.column_stack([param1, param2, param3, param4, param5, param6, param7, param8, param9, param10])
 
     param_behaviors = {'cancer':{'uptake_rate': 0, 'speed': 1, 'transformation_rate': 2},
                     'monocytes':{'speed': 3, 'dead_phagocytosis_rate': 4},
                     'macrophages':{'speed': 5, 'dead_phagocytosis_rate': 6},
                     'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
     
-    for i, values in enumerate(inputs):
-        for celltype, celltype_param in param_behaviors.items(): #param_name = parameter name and lhs_col_index = column number
-            for param, column in celltype_param.items():
-                if(celltype == 'cancer' and param == 'uptake_rate'):
+    for values in args:
+        for i, celltype in enumerate(param_behaviors.keys()): #i = number of keys name and celltype = cell type
+            for param, column in param_behaviors[celltype].items(): #param = parameter name and column = column number
+                if celltype == 'cancer' and param == 'uptake_rate':
                     param_value = values[column] #Extract each value [i, lhs_col_index]
                     param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
-                elif(celltype == 'cancer' and param == 'transformation_rate'):
+                elif celltype == 'cancer' and param == 'transformation_rate':
                     param_value = values[column] #Extract each value [i, lhs_col_index]
                     param_element = root.find(f".//*[@name='{celltype}']//{param}/[@name='apoptotic']") #Find the param name in XML file
                     param_element.text = str(param_value)
-                elif(celltype == 'NLCs' and param == 'secretion_rate'):
+                elif celltype == 'NLCs' and param == 'secretion_rate':
                     param_value = values[column] #Extract each value [i, lhs_col_index]
                     param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
@@ -72,12 +70,14 @@ def model_simulation(input_file_path, replicates, param1, param2, param3, param4
 
 
 from pymoo.core.problem import Problem
+from multiprocessing.pool import ThreadPool
 
 experimental = np.loadtxt('../Netlogo_NLCs-CLL/filtered_fused_9patients.csv', delimiter=",", skiprows=1)
 viability_exp = experimental[:,1]
 concentration_exp = experimental[:,2]
-N = 13
-pop_size = 500
+pop_size = int(sys.argv[1])
+pool = ThreadPool(int(sys.argv[2])) # Adjust the number of threads as needed (how many tasks can run concurrently.)
+n_replicates = int(sys.argv[3])
 
 class calibrationProb(Problem):
     def __init__(self):
@@ -87,15 +87,23 @@ class calibrationProb(Problem):
                        xu = np.array([1.2, 1.2, 6e-5, 1.2, 26e-2, 1.2, 93e-2, 1.2, 1.2, 5e-2]))
         
     def _evaluate(self, x, out):
-        viability, concentration = model_simulation("./config/NLC_CLL.xml", 3, x[:,0], x[:,1], x[:,2], x[:,3], x[:,4], x[:,5], x[:,6], x[:,7], x[:,8], x[:,9])
+
+        # Prepare the parameters for the pool
+        params = [(("./config/NLC_CLL.xml", n_replicates) + tuple(x[i])) for i in range(pop_size)]
+
+        # Calculate the function values in a parallelized manner and wait until done
+        results = pool.starmap(model_simulation, params)
 
         #Objective functions
         obj1 = []
         obj2 = []
         for i in range(pop_size):
-            rmse_viability = np.sqrt(np.sum((viability[:,i] - viability_exp)**2) / N) #RMSE of viability
+            viability, concentration = results[i]
+            #RMSE of viability
+            rmse_viability = np.sqrt(np.sum((viability[:,i] - viability_exp)**2) / 10) #10 is the total of time points
             obj1.append(rmse_viability)
-            rmse_concentration = np.sqrt(np.sum((concentration[:,i] - concentration_exp)**2) / N) #RMSE of viability
+            #RMSE of concentration
+            rmse_concentration = np.sqrt(np.sum((concentration[:,i] - concentration_exp)**2) / 10) #10 is the total of time points
             obj2.append(rmse_concentration)
 
         #Stacking objectives to "F" 
@@ -106,10 +114,10 @@ NLC_problem = calibrationProb()
 
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.optimize import minimize
+from pymoo.termination import get_termination
 
 algorithm_nsga = NSGA2(pop_size=pop_size)
 
-from pymoo.termination import get_termination
 termination = get_termination("n_gen", 1000)
 
 res = minimize(NLC_problem,
@@ -117,6 +125,8 @@ res = minimize(NLC_problem,
                termination,
                seed=1,
                verbose=True)
+
+pool.close() 
 
 print(res.X)
 print(res.F)
