@@ -40,26 +40,24 @@ def parsing(samples_sobol):
                     'macrophages':{'speed': 5, 'dead_phagocytosis_rate': 6},
                     'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
 
-    #param_names = {"cell_cell_repulsion_strength": 0, "cell_cell_adhesion_strength": 1}
-
     # Loop over each iteration in the LHS data
-    for i, sobol_iteration in enumerate(samples_sobol): #Taking rows where i = row number and lhs_iteration = list of parameters from corresponding row
-        for celltype, celltype_param in param_behaviors.items(): #param_name = parameter name and lhs_col_index = column number
-            for param, column in celltype_param.items():
-                if(celltype == 'cancer' and param == 'uptake_rate'):
-                    param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+    for i, sobol_iteration in enumerate(samples_sobol): #Taking rows where i = row number and sobol_iteration = list of parameters from corresponding row
+        for celltype, celltype_param in param_behaviors.items(): #celltype = cell name and celltype_param = parameters 
+            for param, column in celltype_param.items():#param = parameter name and column 
+                if(celltype == 'cancer' and param == 'uptake_rate'): #Specify to change only anti-apo related, not other substrates
+                    param_value = sobol_iteration[column] #Extract each value 
                     param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
-                elif(celltype == 'cancer' and param == 'transformation_rate'):
-                    param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                elif(celltype == 'cancer' and param == 'transformation_rate'): #Specify to only change parameter apoptotic, not others
+                    param_value = sobol_iteration[column] #Extract each value 
                     param_element = root.find(f".//*[@name='{celltype}']//{param}/[@name='apoptotic']") #Find the param name in XML file
                     param_element.text = str(param_value)
-                elif(celltype == 'NLCs' and param == 'secretion_rate'):
-                    param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                elif(celltype == 'NLCs' and param == 'secretion_rate'): #Specify to only change anti apo secretion
+                    param_value = sobol_iteration[column] #Extract each value 
                     param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
                 else:
-                    param_value = sobol_iteration[column] #Extract each value [i, lhs_col_index]
+                    param_value = sobol_iteration[column] #Extract each value 
                     param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
                     param_element.text = str(param_value)
 

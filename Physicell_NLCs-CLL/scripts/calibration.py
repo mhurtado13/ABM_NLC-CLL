@@ -130,3 +130,6 @@ pool.close()
 
 print(res.X)
 print(res.F)
+
+np.savetxt('data_output/Space_values.csv', res.X, delimiter=",")
+np.savetxt('data_output/Objective_values.csv', res.F, delimiter=",")
