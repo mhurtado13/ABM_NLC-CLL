@@ -17,51 +17,50 @@ def model_simulation(input_file_path, replicates, *args):
                     'macrophages':{'speed': 5, 'dead_phagocytosis_rate': 6},
                     'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
     
-    for values in args:
-        for i, celltype in enumerate(param_behaviors.keys()): #i = number of keys name and celltype = cell type
-            for param, column in param_behaviors[celltype].items(): #param = parameter name and column = column number
-                if celltype == 'cancer' and param == 'uptake_rate':
-                    param_value = values[column] #Extract each value [i, lhs_col_index]
-                    param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
-                    param_element.text = str(param_value)
-                elif celltype == 'cancer' and param == 'transformation_rate':
-                    param_value = values[column] #Extract each value [i, lhs_col_index]
-                    param_element = root.find(f".//*[@name='{celltype}']//{param}/[@name='apoptotic']") #Find the param name in XML file
-                    param_element.text = str(param_value)
-                elif celltype == 'NLCs' and param == 'secretion_rate':
-                    param_value = values[column] #Extract each value [i, lhs_col_index]
-                    param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
-                    param_element.text = str(param_value)
-                else:
-                    param_value = values[column] #Extract each value [i, lhs_col_index]
-                    param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
-                    param_element.text = str(param_value)
+    for i, celltype in enumerate(param_behaviors.keys()): #i = number of keys name and celltype = cell type
+        for param, column in param_behaviors[celltype].items(): #param = parameter name and column = column number
+            if celltype == 'cancer' and param == 'uptake_rate':
+                param_value = args[column] #Extract each value [i, col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
+            elif celltype == 'cancer' and param == 'transformation_rate':
+                param_value = args[column] #Extract each value [i, col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//{param}/[@name='apoptotic']") #Find the param name in XML file
+                param_element.text = str(param_value)
+            elif celltype == 'NLCs' and param == 'secretion_rate':
+                param_value = args[column] #Extract each value [i, col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
+            else:
+                param_value = args[column] #Extract each value [i, col_index]
+                param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
+                param_element.text = str(param_value)
 
-        # Define the command to call your C++ software with the updated XML as input
-        command = ["./project", "./config/NLC_CLL.xml"]
+    # Define the command to call your C++ software with the updated XML as input
+    command = ["./project", "./config/NLC_CLL.xml"]
             
-        for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
-            # Random seed for each simulation
-            param_element = root.find(".//random_seed") #Find the random seed in XML file
-            param_element.text = str(random.randint(0,4294967295))
+    for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
+        # Random seed for each simulation
+        param_element = root.find(".//random_seed") #Find the random seed in XML file
+        param_element.text = str(random.randint(0,4294967295))
 
-            # Write the updated XML to a string
-            updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
-            stdin_str = updated_xml_str
+        # Write the updated XML to a string
+        updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
+        stdin_str = updated_xml_str
 
-            # Call the C++ software using subprocess
-            proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            stdout, stderr = proc.communicate(stdin_str.encode())
+        # Call the C++ software using subprocess
+        proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = proc.communicate(stdin_str.encode())
 
-            # Check that the Physicell ran successfully
-            if proc.returncode != 0:
-                print("Error running Physicell")
-                print(stderr.decode())
-                continue
+        # Check that the Physicell ran successfully
+        if proc.returncode != 0:
+            print("Error running Physicell")
+            print(stderr.decode())
+            continue
 
-            subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
+        subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
 
-        subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
+    subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
 
     viability = np.loadtxt('data_output/viability.csv', delimiter=",", skiprows=1)
     concentration = np.loadtxt('data_output/concentration.csv', delimiter=",", skiprows=1)
