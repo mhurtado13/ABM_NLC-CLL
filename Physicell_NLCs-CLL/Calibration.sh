@@ -9,5 +9,8 @@ NUM_THREADS=8
 # Define the number replicates for bootstrapping 
 NUM_REPLICATES=50
 
+# Define the number of generations for genetic algorithm
+NUM_GENERATION=1000
+
 # Calibration of Physicell model using NSGA-II
-python scripts/calibration.py $POP_SIZE $NUM_THREADS $NUM_REPLICATES
+python scripts/calibration.py $POP_SIZE $NUM_THREADS $NUM_REPLICATES $NUM_GENERATION

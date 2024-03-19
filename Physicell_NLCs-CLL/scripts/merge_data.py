@@ -7,7 +7,7 @@ df = pd.read_csv('data_output/data.csv')
 
 # Calculate the column-wise median
 num_lis = []
-for i in range(1, df.shape[1],2):
+for i in range(0, df.shape[1],2):
     number = df.iloc[:, i]
     num_lis.append(number)
     
@@ -30,7 +30,7 @@ else:
     
 # Calculate the column-wise median
 num_lis = []
-for i in range(2, df.shape[1],2):
+for i in range(1, df.shape[1],2):
     number = df.iloc[:, i]
     num_lis.append(number)
     
@@ -48,4 +48,6 @@ if os.path.exists(concentration_csv):
 else:
     concentration.to_csv(concentration_csv, index=False, header=True)
 
+##Remove data.csv file after using it 
+os.remove('data_output/data.csv')
 

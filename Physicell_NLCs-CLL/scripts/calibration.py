@@ -77,6 +77,7 @@ concentration_exp = experimental[:,2]
 pop_size = int(sys.argv[1])
 pool = ThreadPool(int(sys.argv[2])) # Adjust the number of threads as needed (how many tasks can run concurrently.)
 n_replicates = int(sys.argv[3])
+n_gen = int(sys.argv[4])
 
 class calibrationProb(Problem):
     def __init__(self):
@@ -99,14 +100,16 @@ class calibrationProb(Problem):
         for i in range(pop_size):
             viability, concentration = results[i]
             #RMSE of viability
-            rmse_viability = np.sqrt(np.sum((viability[:,i] - viability_exp)**2) / 10) #10 is the total of time points
+            rmse_viability = np.sqrt(np.sum((viability - viability_exp)**2) / 10) #10 is the total of time points
             obj1.append(rmse_viability)
             #RMSE of concentration
-            rmse_concentration = np.sqrt(np.sum((concentration[:,i] - concentration_exp)**2) / 10) #10 is the total of time points
+            rmse_concentration = np.sqrt(np.sum((concentration - concentration_exp)**2) / 10) #10 is the total of time points
             obj2.append(rmse_concentration)
 
         #Stacking objectives to "F" 
         out["F"] = np.column_stack([obj1, obj2])
+
+        pool.close()
 
 
 NLC_problem = calibrationProb()
@@ -117,7 +120,7 @@ from pymoo.termination import get_termination
 
 algorithm_nsga = NSGA2(pop_size=pop_size)
 
-termination = get_termination("n_gen", 1000)
+termination = get_termination("n_gen", n_gen)
 
 res = minimize(NLC_problem,
                algorithm_nsga,
@@ -125,8 +128,7 @@ res = minimize(NLC_problem,
                seed=1,
                verbose=True)
 
-pool.close() 
-
+ 
 print(res.X)
 print(res.F)
 
