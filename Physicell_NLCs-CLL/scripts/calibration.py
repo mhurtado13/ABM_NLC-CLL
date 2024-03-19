@@ -65,6 +65,10 @@ def model_simulation(input_file_path, replicates, *args):
     viability = np.loadtxt('data_output/viability.csv', delimiter=",", skiprows=1)
     concentration = np.loadtxt('data_output/concentration.csv', delimiter=",", skiprows=1)
 
+    ##Remove .csv files to free space
+    os.remove('data_output/viability.csv')
+    os.remove('data_output/concentration.csv')
+
     return viability, concentration
 
 
