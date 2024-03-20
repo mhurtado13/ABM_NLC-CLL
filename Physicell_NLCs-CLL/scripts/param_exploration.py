@@ -6,6 +6,8 @@ import numpy as np
 import os
 import random
 from multiprocessing import Pool
+from pymoo.core.problem import Problem
+from multiprocessing.pool import ThreadPool
 
 def model_simulation(input_file_path, replicates, *args):                
     
@@ -62,78 +64,31 @@ def model_simulation(input_file_path, replicates, *args):
 
     subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
 
-    viability = np.loadtxt('data_output/viability.csv', delimiter=",", skiprows=1)
-    concentration = np.loadtxt('data_output/concentration.csv', delimiter=",", skiprows=1)
+pool = ThreadPool(int(sys.argv[1])) 
+n_replicates = int(sys.argv[2])
 
-    ##Remove .csv files to free space
-    os.remove('data_output/viability.csv')
-    os.remove('data_output/concentration.csv')
+default_values = [1.0, 1.0, 5e-5, 1.0, 25e-2, 1.0, 92e-2, 1.0, 1.0, 4e-2]
 
-    return viability, concentration
+input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_cancer': 5e-5,
+                  'speed_monocytes':1.0, 'dead_phagocytosis_rate_monocytes':25e-2, 'speed_macrophages':1.0,
+                  'dead_phagocytosis_rate_macrophages':92e-2, 'secretion_rate_NLCs':1.0, 'speed_NLCs':1.0,
+                  'dead_phagocytosis_rate_NLCs':4e-2}
 
+vals = [0, 2, 3, 5, 7, 9]
 
-from pymoo.core.problem import Problem
-from multiprocessing.pool import ThreadPool
+def reset_values(data, values_def):        
+    for i, key in enumerate(data.keys()):
+        data[key] = values_def[i]
 
-experimental = np.loadtxt('../Netlogo_NLCs-CLL/filtered_fused_9patients.csv', delimiter=",", skiprows=1)
-viability_exp = experimental[:,1]
-concentration_exp = experimental[:,2]
-pop_size = int(sys.argv[1])
-pool = ThreadPool(int(sys.argv[2])) # Adjust the number of threads as needed (how many tasks can run concurrently.)
-n_replicates = int(sys.argv[3])
-n_gen = int(sys.argv[4])
+for parameter in input.keys():
+    x = []
+    for i in vals:
+        input[parameter] = i
+        x.append(tuple(input.values()))
+        reset_values(input, default_values)
 
-class calibrationProb(Problem):
-    def __init__(self):
-        super().__init__(n_var = 10,
-                       n_obj = 2,
-                       xl = np.array([0.9, 0.9, 4e-5, 0.9, 24e-2, 0.9, 91e-2, 0.9, 0.9, 3e-2]),
-                       xu = np.array([1.2, 1.2, 6e-5, 1.2, 26e-2, 1.2, 93e-2, 1.2, 1.2, 5e-2]))
-        
-    def _evaluate(self, x, out):
+    params = [(("./config/NLC_CLL.xml", n_replicates) + x[contador]) for contador in range(len(vals))]
 
-        # Prepare the parameters for the pool
-        params = [(("./config/NLC_CLL.xml", n_replicates) + tuple(x[i])) for i in range(pop_size)]
+    pool.starmap(model_simulation, params)
 
-        # Calculate the function values in a parallelized manner and wait until done
-        results = pool.starmap(model_simulation, params)
-
-        #Objective functions
-        obj1 = []
-        obj2 = []
-        for i in range(pop_size):
-            viability, concentration = results[i]
-            #RMSE of viability
-            rmse_viability = np.sqrt(np.sum((viability - viability_exp)**2) / 10) #10 is the total of time points
-            obj1.append(rmse_viability)
-            #RMSE of concentration
-            rmse_concentration = np.sqrt(np.sum((concentration - concentration_exp)**2) / 10) #10 is the total of time points
-            obj2.append(rmse_concentration)
-
-        #Stacking objectives to "F" 
-        out["F"] = np.column_stack([obj1, obj2])
-
-
-NLC_problem = calibrationProb()
-
-from pymoo.algorithms.moo.nsga2 import NSGA2
-from pymoo.optimize import minimize
-from pymoo.termination import get_termination
-
-algorithm_nsga = NSGA2(pop_size=pop_size)
-
-termination = get_termination("n_gen", n_gen)
-
-res = minimize(NLC_problem,
-               algorithm_nsga,
-               termination,
-               seed=1,
-               verbose=True)
-
-pool.close()
-
-print(res.X)
-print(res.F)
-
-np.savetxt('data_output/Space_values.csv', res.X, delimiter=",")
-np.savetxt('data_output/Objective_values.csv', res.F, delimiter=",")
+    pool.close()
