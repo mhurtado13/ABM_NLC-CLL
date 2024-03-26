@@ -91,4 +91,4 @@ for parameter in input.keys():
 
     pool.starmap(model_simulation, params)
 
-    pool.close()
+pool.close()
