@@ -74,7 +74,7 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
                   'dead_phagocytosis_rate_macrophages':92e-2, 'secretion_rate_NLCs':1.0, 'speed_NLCs':1.0,
                   'dead_phagocytosis_rate_NLCs':4e-2}
 
-vals = [0, 2, 3, 5, 7, 9]
+vals = [10, 40, 60, 80, 100, 130]
 
 def reset_values(data, values_def):        
     for i, key in enumerate(data.keys()):
