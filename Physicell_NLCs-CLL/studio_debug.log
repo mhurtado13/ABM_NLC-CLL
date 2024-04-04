@@ -1,6 +1,6 @@
-DEBUG:root:studio.py: config file is ./config/NLC_CLL.xml
+DEBUG:root:studio.py: config file is config/NLC_CLL.xml
 DEBUG:root:studio.py: open_as_cb():  filePath is valid
-DEBUG:root:len(config_file) = 20
+DEBUG:root:len(config_file) = 18
 DEBUG:root:done with args.config
 DEBUG:root:exec pgm is ./project
 DEBUG:root:self.current_dir = /home/marcelo/Documents/REACT/Physicell_NLCs-CLL
@@ -12,26 +12,26 @@ DEBUG:root: --> debris
 DEBUG:root:=======================  microenv populate_tree  ======================= 
 DEBUG:root:dc_ic_units =  dimensionless
 DEBUG:root:dc_bc_units = dimensionless
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee536a0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01a7a0>
 DEBUG:root:   -------- anti-apoptotic factor:  dirichlet_xmin = None
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53740>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee537e0>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53880>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53920>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee539c0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01a840>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01a8e0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01a980>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01aa20>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01aac0>
 DEBUG:root:dc_ic_units =  dimensionless
 DEBUG:root:dc_bc_units = dimensionless
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53d30>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01ae30>
 DEBUG:root:   -------- debris:  dirichlet_xmin = None
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53dd0>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53e70>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53f10>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521ee53fb0>
-DEBUG:root:bv = <Element 'boundary_value' at 0x7b521edf8090>
-DEBUG:root:------- options: <Element 'calculate_gradients' at 0x7b521edf8180>
-DEBUG:root:------- options: <Element 'track_internalized_substrates_in_each_agent' at 0x7b521edf8220>
-DEBUG:root:------- options: <Element 'initial_condition' at 0x7b521edf8270>
-DEBUG:root:------- options: <Element 'dirichlet_nodes' at 0x7b521edf83b0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01aed0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01af70>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01b010>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01b0b0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x780ccb01b150>
+DEBUG:root:------- options: <Element 'calculate_gradients' at 0x780ccb01b240>
+DEBUG:root:------- options: <Element 'track_internalized_substrates_in_each_agent' at 0x780ccb01b2e0>
+DEBUG:root:------- options: <Element 'initial_condition' at 0x780ccb01b330>
+DEBUG:root:------- options: <Element 'dirichlet_nodes' at 0x780ccb01b470>
 DEBUG:root:
 
 =======================  leaving microenv populate_tree  =====================
@@ -81,22 +81,22 @@ DEBUG:root:
 DEBUG:root: >> cycle_path= .//cell_definition[1]//phenotype//cycle
 DEBUG:root:   cycle code= 5
 DEBUG:root: >> phase_transition_path 
-DEBUG:root:<Element 'rate' at 0x7b521edf8810>
+DEBUG:root:<Element 'rate' at 0x780ccb01b8d0>
 DEBUG:root:--  cycle_live_trate00 0
 DEBUG:root: >> phase_durations_path =.//cell_definition[1]//phenotype//cycle//phase_durations
 DEBUG:root: >> pd_uep =None
 DEBUG:root:
 ===== populate_tree():  death
-DEBUG:root:death_uep=<Element 'death' at 0x7b521edf8950>
+DEBUG:root:death_uep=<Element 'death' at 0x780ccb01ba10>
 DEBUG:root:-------- parsing apoptosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521edf8b30>
-DEBUG:root:phase_duration= <Element 'duration' at 0x7b521edf8bd0>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb01bbf0>
+DEBUG:root:phase_duration= <Element 'duration' at 0x780ccb01bc90>
 DEBUG:root:index= 0
 DEBUG:root:-------- parsing necrosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521edf94e0>
-DEBUG:root:<Element 'duration' at 0x7b521edf9580>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb02c5e0>
+DEBUG:root:<Element 'duration' at 0x780ccb02c680>
 DEBUG:root:index= 0
-DEBUG:root:<Element 'duration' at 0x7b521edf9620>
+DEBUG:root:<Element 'duration' at 0x780ccb02c720>
 DEBUG:root:index= 1
 DEBUG:root:volume_path=.//cell_definition[1]//phenotype//volume//
 DEBUG:root:
@@ -117,10 +117,10 @@ DEBUG:root:
 DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//
 DEBUG:root:chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:sensitivity_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
-DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7b521edfbba0>
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521edfbc90>
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x780ccb02eca0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb02ed90>
 DEBUG:root: chemotactic_sensitivity--> anti-apoptotic factor = 0.0
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521edfbce0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb02ede0>
 DEBUG:root: chemotactic_sensitivity--> debris = 0.0
 DEBUG:root:{'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
@@ -133,7 +133,7 @@ DEBUG:root:     chemotactic_sensitivity (dict)= {'anti-apoptotic factor': '0.0',
 DEBUG:root:
 ===== populate_tree():  secretion
 DEBUG:root:secretion_path = .//cell_definition[1]//phenotype//secretion//
-DEBUG:root:uep_secretion = <Element 'secretion' at 0x7b521edfbec0>
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x780ccb02efc0>
 DEBUG:root:0) -- secretion substrate = anti-apoptotic factor
 DEBUG:root:1) -- secretion substrate = debris
 DEBUG:root:------ done parsing secretion:
@@ -141,7 +141,7 @@ DEBUG:root:
 ===== populate_tree():  cell_interactions
 DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//cell_interactions
 DEBUG:root:---- found cell_interactions:
-DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7b521ec58ae0>
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x780ccb02fba0>
 DEBUG:root: live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
 DEBUG:root: attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
 DEBUG:root: fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
@@ -156,7 +156,7 @@ DEBUG:root:
 DEBUG:root:------ done parsing intracellular:
 DEBUG:root:
 ===== populate_tree():  custom data
-DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7b521ec59df0>
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x780ccb038ef0>
 DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
 DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
 DEBUG:root:populate: cell_def_name= cancer --> custom_data: {'sample': ['1.0', False]}
@@ -171,22 +171,22 @@ DEBUG:root:
 DEBUG:root: >> cycle_path= .//cell_definition[2]//phenotype//cycle
 DEBUG:root:   cycle code= 5
 DEBUG:root: >> phase_transition_path 
-DEBUG:root:<Element 'rate' at 0x7b521ec5a110>
+DEBUG:root:<Element 'rate' at 0x780ccb039210>
 DEBUG:root:--  cycle_live_trate00 0
 DEBUG:root: >> phase_durations_path =.//cell_definition[2]//phenotype//cycle//phase_durations
 DEBUG:root: >> pd_uep =None
 DEBUG:root:
 ===== populate_tree():  death
-DEBUG:root:death_uep=<Element 'death' at 0x7b521ec5a250>
+DEBUG:root:death_uep=<Element 'death' at 0x780ccb039350>
 DEBUG:root:-------- parsing apoptosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec5a430>
-DEBUG:root:phase_duration= <Element 'duration' at 0x7b521ec5a4d0>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb039530>
+DEBUG:root:phase_duration= <Element 'duration' at 0x780ccb0395d0>
 DEBUG:root:index= 0
 DEBUG:root:-------- parsing necrosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec5ac00>
-DEBUG:root:<Element 'duration' at 0x7b521ec5aca0>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb039d00>
+DEBUG:root:<Element 'duration' at 0x780ccb039da0>
 DEBUG:root:index= 0
-DEBUG:root:<Element 'duration' at 0x7b521ec5ad40>
+DEBUG:root:<Element 'duration' at 0x780ccb039e40>
 DEBUG:root:index= 1
 DEBUG:root:volume_path=.//cell_definition[2]//phenotype//volume//
 DEBUG:root:
@@ -207,10 +207,10 @@ DEBUG:root:
 DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[2]//phenotype//motility//options//advanced_chemotaxis//
 DEBUG:root:chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:sensitivity_path= .//cell_definition[2]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
-DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7b521ec6ce50>
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec6cef0>
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x780ccb03bf10>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb03bfb0>
 DEBUG:root: chemotactic_sensitivity--> anti-apoptotic factor = 0.0
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec6cf40>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb048040>
 DEBUG:root: chemotactic_sensitivity--> debris = 0.0
 DEBUG:root:{'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
@@ -220,7 +220,7 @@ DEBUG:root:   chemotactic_sensitivity = {'anti-apoptotic factor': '0.0', 'debris
 DEBUG:root:
 ===== populate_tree():  secretion
 DEBUG:root:secretion_path = .//cell_definition[2]//phenotype//secretion//
-DEBUG:root:uep_secretion = <Element 'secretion' at 0x7b521ec6d120>
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x780ccb048220>
 DEBUG:root:0) -- secretion substrate = anti-apoptotic factor
 DEBUG:root:1) -- secretion substrate = debris
 DEBUG:root:------ done parsing secretion:
@@ -228,7 +228,7 @@ DEBUG:root:
 ===== populate_tree():  cell_interactions
 DEBUG:root:---- cell_interactions_path= .//cell_definition[2]//phenotype//cell_interactions
 DEBUG:root:---- found cell_interactions:
-DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7b521ec6dbc0>
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x780ccb048cc0>
 DEBUG:root: live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '25e-2'}
 DEBUG:root: attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
 DEBUG:root: fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
@@ -243,7 +243,7 @@ DEBUG:root:
 DEBUG:root:------ done parsing intracellular:
 DEBUG:root:
 ===== populate_tree():  custom data
-DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7b521ec6ed90>
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x780ccb049e90>
 DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
 DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
 DEBUG:root:populate: cell_def_name= monocytes --> custom_data: {'sample': ['1.0', False]}
@@ -258,22 +258,22 @@ DEBUG:root:
 DEBUG:root: >> cycle_path= .//cell_definition[3]//phenotype//cycle
 DEBUG:root:   cycle code= 5
 DEBUG:root: >> phase_transition_path 
-DEBUG:root:<Element 'rate' at 0x7b521ec6f0b0>
+DEBUG:root:<Element 'rate' at 0x780ccb04a1b0>
 DEBUG:root:--  cycle_live_trate00 0
 DEBUG:root: >> phase_durations_path =.//cell_definition[3]//phenotype//cycle//phase_durations
 DEBUG:root: >> pd_uep =None
 DEBUG:root:
 ===== populate_tree():  death
-DEBUG:root:death_uep=<Element 'death' at 0x7b521ec6f1f0>
+DEBUG:root:death_uep=<Element 'death' at 0x780ccb04a2f0>
 DEBUG:root:-------- parsing apoptosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec6f3d0>
-DEBUG:root:phase_duration= <Element 'duration' at 0x7b521ec6f470>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb04a4d0>
+DEBUG:root:phase_duration= <Element 'duration' at 0x780ccb04a570>
 DEBUG:root:index= 0
 DEBUG:root:-------- parsing necrosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec6fba0>
-DEBUG:root:<Element 'duration' at 0x7b521ec6fc40>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb04aca0>
+DEBUG:root:<Element 'duration' at 0x780ccb04ad40>
 DEBUG:root:index= 0
-DEBUG:root:<Element 'duration' at 0x7b521ec6fce0>
+DEBUG:root:<Element 'duration' at 0x780ccb04ade0>
 DEBUG:root:index= 1
 DEBUG:root:volume_path=.//cell_definition[3]//phenotype//volume//
 DEBUG:root:
@@ -294,10 +294,10 @@ DEBUG:root:
 DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[3]//phenotype//motility//options//advanced_chemotaxis//
 DEBUG:root:chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:sensitivity_path= .//cell_definition[3]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
-DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7b521ec5ddf0>
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec5de90>
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x780ccb054ef0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb054f90>
 DEBUG:root: chemotactic_sensitivity--> anti-apoptotic factor = 0.0
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec5dee0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb054fe0>
 DEBUG:root: chemotactic_sensitivity--> debris = 0.0
 DEBUG:root:{'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
@@ -307,7 +307,7 @@ DEBUG:root:   chemotactic_sensitivity = {'anti-apoptotic factor': '0.0', 'debris
 DEBUG:root:
 ===== populate_tree():  secretion
 DEBUG:root:secretion_path = .//cell_definition[3]//phenotype//secretion//
-DEBUG:root:uep_secretion = <Element 'secretion' at 0x7b521ec5e0c0>
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x780ccb0551c0>
 DEBUG:root:0) -- secretion substrate = anti-apoptotic factor
 DEBUG:root:1) -- secretion substrate = debris
 DEBUG:root:------ done parsing secretion:
@@ -315,7 +315,7 @@ DEBUG:root:
 ===== populate_tree():  cell_interactions
 DEBUG:root:---- cell_interactions_path= .//cell_definition[3]//phenotype//cell_interactions
 DEBUG:root:---- found cell_interactions:
-DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7b521ec5eb60>
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x780ccb055c60>
 DEBUG:root: live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '92e-2'}
 DEBUG:root: attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
 DEBUG:root: fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
@@ -330,7 +330,7 @@ DEBUG:root:
 DEBUG:root:------ done parsing intracellular:
 DEBUG:root:
 ===== populate_tree():  custom data
-DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7b521ec5fd30>
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x780ccb056e30>
 DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
 DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
 DEBUG:root:populate: cell_def_name= macrophages --> custom_data: {'sample': ['1.0', False]}
@@ -345,22 +345,22 @@ DEBUG:root:
 DEBUG:root: >> cycle_path= .//cell_definition[4]//phenotype//cycle
 DEBUG:root:   cycle code= 5
 DEBUG:root: >> phase_transition_path 
-DEBUG:root:<Element 'rate' at 0x7b521ec94090>
+DEBUG:root:<Element 'rate' at 0x780ccb057150>
 DEBUG:root:--  cycle_live_trate00 0
 DEBUG:root: >> phase_durations_path =.//cell_definition[4]//phenotype//cycle//phase_durations
 DEBUG:root: >> pd_uep =None
 DEBUG:root:
 ===== populate_tree():  death
-DEBUG:root:death_uep=<Element 'death' at 0x7b521ec941d0>
+DEBUG:root:death_uep=<Element 'death' at 0x780ccb057290>
 DEBUG:root:-------- parsing apoptosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec943b0>
-DEBUG:root:phase_duration= <Element 'duration' at 0x7b521ec94450>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb057470>
+DEBUG:root:phase_duration= <Element 'duration' at 0x780ccb057510>
 DEBUG:root:index= 0
 DEBUG:root:-------- parsing necrosis!
-DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7b521ec94b80>
-DEBUG:root:<Element 'duration' at 0x7b521ec94c20>
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x780ccb057c40>
+DEBUG:root:<Element 'duration' at 0x780ccb057ce0>
 DEBUG:root:index= 0
-DEBUG:root:<Element 'duration' at 0x7b521ec94cc0>
+DEBUG:root:<Element 'duration' at 0x780ccb057d80>
 DEBUG:root:index= 1
 DEBUG:root:volume_path=.//cell_definition[4]//phenotype//volume//
 DEBUG:root:
@@ -381,10 +381,10 @@ DEBUG:root:
 DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[4]//phenotype//motility//options//advanced_chemotaxis//
 DEBUG:root:chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:sensitivity_path= .//cell_definition[4]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
-DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7b521ec96d90>
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec96e30>
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x780ccb061e90>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb061f30>
 DEBUG:root: chemotactic_sensitivity--> anti-apoptotic factor = 0.0
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521ec96e80>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb061f80>
 DEBUG:root: chemotactic_sensitivity--> debris = 0.0
 DEBUG:root:{'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
@@ -394,7 +394,7 @@ DEBUG:root:   chemotactic_sensitivity = {'anti-apoptotic factor': '0.0', 'debris
 DEBUG:root:
 ===== populate_tree():  secretion
 DEBUG:root:secretion_path = .//cell_definition[4]//phenotype//secretion//
-DEBUG:root:uep_secretion = <Element 'secretion' at 0x7b521ec97060>
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x780ccb062160>
 DEBUG:root:0) -- secretion substrate = anti-apoptotic factor
 DEBUG:root:1) -- secretion substrate = debris
 DEBUG:root:------ done parsing secretion:
@@ -402,7 +402,7 @@ DEBUG:root:
 ===== populate_tree():  cell_interactions
 DEBUG:root:---- cell_interactions_path= .//cell_definition[4]//phenotype//cell_interactions
 DEBUG:root:---- found cell_interactions:
-DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7b521ec97b00>
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x780ccb062c00>
 DEBUG:root: live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '4e-2'}
 DEBUG:root: attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
 DEBUG:root: fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
@@ -417,7 +417,7 @@ DEBUG:root:
 DEBUG:root:------ done parsing intracellular:
 DEBUG:root:
 ===== populate_tree():  custom data
-DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7b521eca0d10>
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x780ccb063dd0>
 DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
 DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
 DEBUG:root:populate: cell_def_name= NLCs --> custom_data: {'sample': ['1.0', False]}
@@ -432,23 +432,23 @@ DEBUG:root:
 DEBUG:root: >> cycle_path= .//cell_definition[5]//phenotype//cycle
 DEBUG:root:   cycle code= 5
 DEBUG:root: >> phase_transition_path 
-DEBUG:root:<Element 'rate' at 0x7b521eca1030>
+DEBUG:root:<Element 'rate' at 0x780ccb070130>
 DEBUG:root:--  cycle_live_trate00 0
 DEBUG:root: >> phase_durations_path =.//cell_definition[5]//phenotype//cycle//phase_durations
 DEBUG:root: >> pd_uep =None
 DEBUG:root:
 ===== populate_tree():  death
-DEBUG:root:death_uep=<Element 'death' at 0x7b521eca1170>
+DEBUG:root:death_uep=<Element 'death' at 0x780ccb070270>
 DEBUG:root:-------- parsing apoptosis!
-DEBUG:root: >> tr_uep =<Element 'phase_transition_rates' at 0x7b521eca1350>
-DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x7b521eca13f0>
+DEBUG:root: >> tr_uep =<Element 'phase_transition_rates' at 0x780ccb070450>
+DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x780ccb0704f0>
 DEBUG:root:start_index= 0
 DEBUG:root:-------- parsing necrosis!
-DEBUG:root: >> tr_uep =<Element 'phase_transition_rates' at 0x7b521eca1b20>
-DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x7b521eca1bc0>
+DEBUG:root: >> tr_uep =<Element 'phase_transition_rates' at 0x780ccb070c20>
+DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x780ccb070cc0>
 DEBUG:root:start_index= 0
 DEBUG:root: --- transition rate 01 (float) = 9000000000.0
-DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x7b521eca1c60>
+DEBUG:root:death: phase_transition_rates= <Element 'rate' at 0x780ccb070d60>
 DEBUG:root:start_index= 1
 DEBUG:root: --- transition rate 12 (float) = 1.15741e-05
 DEBUG:root:volume_path=.//cell_definition[5]//phenotype//volume//
@@ -470,10 +470,10 @@ DEBUG:root:
 DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[5]//phenotype//motility//options//advanced_chemotaxis//
 DEBUG:root:chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:sensitivity_path= .//cell_definition[5]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
-DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7b521eca3d80>
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521eca3e20>
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x780ccb072e80>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb072f20>
 DEBUG:root: chemotactic_sensitivity--> anti-apoptotic factor = 0.0
-DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7b521eca3e70>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x780ccb072f70>
 DEBUG:root: chemotactic_sensitivity--> debris = 0.0
 DEBUG:root:{'anti-apoptotic factor': '0.0', 'debris': '0.0'}
 DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
@@ -483,7 +483,7 @@ DEBUG:root:   chemotactic_sensitivity = {'anti-apoptotic factor': '0.0', 'debris
 DEBUG:root:
 ===== populate_tree():  secretion
 DEBUG:root:secretion_path = .//cell_definition[5]//phenotype//secretion//
-DEBUG:root:uep_secretion = <Element 'secretion' at 0x7b521ecb0090>
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x780ccb073150>
 DEBUG:root:0) -- secretion substrate = anti-apoptotic factor
 DEBUG:root:1) -- secretion substrate = debris
 DEBUG:root:------ done parsing secretion:
@@ -491,7 +491,7 @@ DEBUG:root:
 ===== populate_tree():  cell_interactions
 DEBUG:root:---- cell_interactions_path= .//cell_definition[5]//phenotype//cell_interactions
 DEBUG:root:---- found cell_interactions:
-DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7b521ecb0b30>
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x780ccb073bf0>
 DEBUG:root: live_phagocytosis_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
 DEBUG:root: attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
 DEBUG:root: fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
@@ -506,7 +506,7 @@ DEBUG:root:
 DEBUG:root:------ done parsing intracellular:
 DEBUG:root:
 ===== populate_tree():  custom data
-DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7b521ecb1d00>
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x780ccad04e00>
 DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
 DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
 DEBUG:root:populate: cell_def_name= apoptotic --> custom_data: {'sample': ['0.0', False]}
@@ -945,6 +945,305 @@ DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:varian
 DEBUG:root:ics_tab.py: fill_celltype_combobox(): ['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic']
 DEBUG:root:ics_tab.py: fill_celltype_combobox(): ['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic']
 DEBUG:root:studio.py: calling vis_tab.substrates_cbox_changed_cb(2)
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 2
+DEBUG:root:substrates_in_tree =['anti-apoptotic factor', 'debris']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = anti-apoptotic factor
+DEBUG:root:matched! anti-apoptotic factor
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = debris
+DEBUG:root:matched! debris
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 5
+DEBUG:root:cdefs_in_tree =['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic']
+DEBUG:root:
+--- key in param_d.keys() = cancer
+DEBUG:root:matched! cancer
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): anti-apoptotic factor = anti-apoptotic factor 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= cancer
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 5e-5
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for cancer
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for cancer
+DEBUG:root:
+--- key in param_d.keys() = monocytes
+DEBUG:root:matched! monocytes
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= monocytes
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '25e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 25e-2
+DEBUG:root:--- attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for monocytes
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for monocytes
+DEBUG:root:
+--- key in param_d.keys() = macrophages
+DEBUG:root:matched! macrophages
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= macrophages
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '92e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 92e-2
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for macrophages
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for macrophages
+DEBUG:root:
+--- key in param_d.keys() = NLCs
+DEBUG:root:matched! NLCs
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= NLCs
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '4e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 4e-2
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for NLCs
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for NLCs
+DEBUG:root:
+--- key in param_d.keys() = apoptotic
+DEBUG:root:matched! apoptotic
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): anti-apoptotic factor = anti-apoptotic factor 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= apoptotic
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for apoptotic
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for apoptotic
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 100
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
 DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=7.0.
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/home/marcelo/mambaforge/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/home/marcelo/mambaforge/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
@@ -1351,8 +1650,480 @@ DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/home/marcelo/min
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/usr/share/fonts/truetype/tlwg/TlwgTypo-Oblique.ttf', name='Tlwg Typo', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf', name='FreeMono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
 DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=7.0 to DejaVu Sans ('/home/marcelo/mambaforge/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-900.0, 900.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-900.0, 900.0)
 DEBUG:root:===========  run_model_cb():  ============
 DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 2
+DEBUG:root:substrates_in_tree =['anti-apoptotic factor', 'debris']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = anti-apoptotic factor
+DEBUG:root:matched! anti-apoptotic factor
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = debris
+DEBUG:root:matched! debris
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 5
+DEBUG:root:cdefs_in_tree =['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic']
+DEBUG:root:
+--- key in param_d.keys() = cancer
+DEBUG:root:matched! cancer
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): anti-apoptotic factor = anti-apoptotic factor 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= cancer
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0', '': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 5e-5
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for cancer
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for cancer
+DEBUG:root:
+--- key in param_d.keys() = monocytes
+DEBUG:root:matched! monocytes
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= monocytes
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '25e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 25e-2
+DEBUG:root:--- attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for monocytes
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for monocytes
+DEBUG:root:
+--- key in param_d.keys() = macrophages
+DEBUG:root:matched! macrophages
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= macrophages
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '92e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 92e-2
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for macrophages
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for macrophages
+DEBUG:root:
+--- key in param_d.keys() = NLCs
+DEBUG:root:matched! NLCs
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): debris = debris 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= NLCs
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '4e-2'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 4e-2
+DEBUG:root:--- attack_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0', 'monocytes': '0.0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for NLCs
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for NLCs
+DEBUG:root:
+--- key in param_d.keys() = apoptotic
+DEBUG:root:matched! apoptotic
+DEBUG:root:--- cell_adhesion_affinity= {'cancer': '0', 'monocytes': '0', 'macrophages': '0', 'NLCs': '0', 'apoptotic': '0'}
+DEBUG:root:cancer  --> 0
+DEBUG:root:monocytes  --> 0
+DEBUG:root:macrophages  --> 0
+DEBUG:root:NLCs  --> 0
+DEBUG:root:apoptotic  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): anti-apoptotic factor = anti-apoptotic factor 
+
+
+DEBUG:root:fill_xml_motility(): {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:anti-apoptotic factor  --> 0.0
+DEBUG:root:debris  --> 0.0
+DEBUG:root:self.substrate_list = ['anti-apoptotic factor', 'debris']
+DEBUG:root:substrate = anti-apoptotic factor
+DEBUG:root:substrate = debris
+DEBUG:root:------------------- fill_xml_interactions():  cdef= apoptotic
+DEBUG:root:--- live_phagocytosis_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= monocytes
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= macrophages
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= NLCs
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= apoptotic
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- attack_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer': '0.0', 'monocytes': '0.0', 'macrophages': '0.0', 'NLCs': '0.0', 'apoptotic': '0.0'}
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:cancer  --> 0.0
+DEBUG:root:monocytes  --> 0.0
+DEBUG:root:macrophages  --> 0.0
+DEBUG:root:NLCs  --> 0.0
+DEBUG:root:apoptotic  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for apoptotic
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for apoptotic
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 100
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= monocytes
+DEBUG:root:   (simple) chemotaxis motility is enabled:
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 1
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = monocytes
+DEBUG:root:                         text = debris
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= monocytes ) = debris
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= monocytes ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = monocytes
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= macrophages
+DEBUG:root:   (simple) chemotaxis motility is enabled:
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= macrophages ) = debris
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= macrophages ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = macrophages
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= cancer
+DEBUG:root:   (simple) chemotaxis motility is enabled:
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 0
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = cancer
+DEBUG:root:                         text = anti-apoptotic factor
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= cancer ) = anti-apoptotic factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= cancer ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = cancer
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '1', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= monocytes
+DEBUG:root:   (simple) chemotaxis motility is enabled:
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 1
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = monocytes
+DEBUG:root:                         text = debris
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= monocytes ) = debris
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= monocytes ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = monocytes
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> transition rate     
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>transition rate     
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= apoptotic
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 0
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = apoptotic
+DEBUG:root:                         text = anti-apoptotic factor
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= apoptotic ) = anti-apoptotic factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= apoptotic ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = apoptotic
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '1', 'secretion_target': '1', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> duration
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>duration
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= cancer
+DEBUG:root:   (simple) chemotaxis motility is enabled:
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= cancer ) = anti-apoptotic factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= cancer ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = cancer
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '1', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> transition rate     
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>transition rate     
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:key 0= cancer
+DEBUG:root:keys 1= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:keys 2= dict_keys(['cancer', 'monocytes', 'macrophages', 'NLCs', 'apoptotic'])
+DEBUG:root:
+----- update_motility_params():  cdname= apoptotic
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= apoptotic ) = anti-apoptotic factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= apoptotic ) = anti-apoptotic factor
+DEBUG:root:    chemotactic_sensitivity= {'anti-apoptotic factor': '0.0', 'debris': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = apoptotic
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = anti-apoptotic factor
+DEBUG:root:{'anti-apoptotic factor': {'secretion_rate': '0.0', 'secretion_target': '0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '1', 'secretion_target': '1', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
 DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
 DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 2
 DEBUG:root:substrates_in_tree =['anti-apoptotic factor', 'debris']

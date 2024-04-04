@@ -20,14 +20,14 @@ def collect(config_file):
 
     #Initial CLL cells
     initial = timesteps[0].get_cell_df(states=2)
-    CLL_initial = len(initial[(initial['cell_type']=="cancer_cells")|(initial['cell_type']=="apoptotic")])
+    CLL_initial = len(initial[(initial['cell_type']=="cancer")|(initial['cell_type']=="apoptotic")])
 
     #Calculate alive and dead cells across days
     alive = [CLL_initial]
     dead = [0]
     for i in range(1, len(positions)):
         step = timesteps[positions[i]].get_cell_df(states=2)
-        number_alive = len(step[((step['cell_type']=='cancer_cells')|(step['cell_type']=='apoptotic'))&(step['dead']==False)])
+        number_alive = len(step[((step['cell_type']=='cancer')|(step['cell_type']=='apoptotic'))&(step['dead']==False)])
         number_dead = len(step[step['dead']==True])
         alive.append(number_alive)
         dead.append(number_dead)

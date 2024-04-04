@@ -74,6 +74,10 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
                   'dead_phagocytosis_rate_macrophages':92e-2, 'secretion_rate_NLCs':1.0, 'speed_NLCs':1.0,
                   'dead_phagocytosis_rate_NLCs':4e-2}
 
+#death rate apoptotic cells
+#number of initial apoptotic cells 
+#number of initial CLL cells
+
 vals = [10, 40, 60, 80, 100, 130]
 
 def reset_values(data, values_def):        
