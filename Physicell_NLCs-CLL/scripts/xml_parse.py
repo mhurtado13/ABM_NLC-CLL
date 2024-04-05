@@ -66,8 +66,8 @@ def parsing(samples_sobol):
         
         for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
             # Random seed for each simulation
-            param_element = root.findall(".//random_seed") #Find the random seed in XML file
-            param_element.text = random.randint(0,4294967295)
+            param_element = root.find(".//random_seed") #Find the random seed in XML file
+            param_element.text = str(random.randint(0,4294967295))
 
             # Write the updated XML to a string
             updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")

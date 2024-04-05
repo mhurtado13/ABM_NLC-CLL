@@ -8,6 +8,8 @@ import random
 from multiprocessing import Pool
 from pymoo.core.problem import Problem
 from multiprocessing.pool import ThreadPool
+from collect_data import collect
+from merge_data import merge
 
 def model_simulation(input_file_path, replicates, *args):                
     
@@ -40,7 +42,7 @@ def model_simulation(input_file_path, replicates, *args):
 
     # Define the command to call your C++ software with the updated XML as input
     command = ["./project", "./config/NLC_CLL.xml"]
-            
+    data = []        
     for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
         # Random seed for each simulation
         param_element = root.find(".//random_seed") #Find the random seed in XML file
@@ -60,9 +62,12 @@ def model_simulation(input_file_path, replicates, *args):
             print(stderr.decode())
             continue
 
-        subprocess.run(["python", "scripts/collect_data.py"]) #We collect the data at each iteration
+        df = collect('config/NLC_CLL.xml') #We collect the data at each iteration
+        data.append(df)
 
-    subprocess.run(["python", "scripts/merge_data.py"]) #Merge data of replicates 
+    viability, concentration = merge(data) #Merge data of replicates 
+
+    return viability, concentration
 
 pool = ThreadPool(int(sys.argv[1])) 
 n_replicates = int(sys.argv[2])
@@ -93,6 +98,18 @@ for parameter in input.keys():
 
     params = [(("./config/NLC_CLL.xml", n_replicates) + x[contador]) for contador in range(len(vals))]
 
-    pool.starmap(model_simulation, params)
+    results = pool.starmap(model_simulation, params)
 
 pool.close()
+pool.join()
+
+viability = []
+concentration = []
+
+for i in range(len(vals)):
+    via, conc = results[i]
+    viability.append(via)
+    concentration.append(conc)
+
+viability.to_csv('data_output/viability_exploration.csv', index=False, header=True)
+concentration.to_csv('data_output/concentration_exploration.csv', index=False, header=True)

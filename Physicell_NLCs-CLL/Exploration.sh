@@ -16,7 +16,7 @@
 NUM_THREADS=2
 
 # Define the number replicates for bootstrapping 
-NUM_REPLICATES=4
+NUM_REPLICATES=2
 
 # Parameter exploration
 python scripts/param_exploration.py $NUM_THREADS $NUM_REPLICATES 
