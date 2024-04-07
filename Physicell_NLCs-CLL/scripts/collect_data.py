@@ -7,8 +7,7 @@ import pcdl
 import os
 
 #config_file = 'config/NLC_CLL.xml'
-def collect(config_file):
-    dir_output = '../output/'
+def collect(dir_output, config_file):
     mcdsts = pcdl.TimeSeries(dir_output, settingxml=config_file) 
     timesteps = mcdsts.get_mcds_list()
 
