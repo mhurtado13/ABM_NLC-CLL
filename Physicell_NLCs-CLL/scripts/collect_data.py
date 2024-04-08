@@ -19,25 +19,34 @@ def collect(dir_output, config_file):
 
     #Initial CLL cells
     initial = timesteps[0].get_cell_df(states=2)
-    CLL_initial = len(initial[(initial['cell_type']=="cancer")|(initial['cell_type']=="apoptotic")])
+    CLL_initial = len(initial[(initial['cell_type']=="cancer")])
+    apoptotic_initial = len(initial[(initial['cell_type']=="apoptotic")])
 
-    #Calculate alive and dead cells across days
+    positions = []
+    for days in range(0,14):
+        hours = 24*days
+        positions.append(hours)
+
     alive = [CLL_initial]
     dead = [0]
+    apoptotic = [apoptotic_initial]
     for i in range(1, len(positions)):
         step = timesteps[positions[i]].get_cell_df(states=2)
-        number_alive = len(step[((step['cell_type']=='cancer')|(step['cell_type']=='apoptotic'))&(step['dead']==False)])
+        number_alive = len(step[(step['cell_type']=='cancer')&(step['dead']==False)])
+        number_apoptotic = len(step[(step['cell_type']=='apoptotic')&(step['dead']==False)])
         number_dead = len(step[step['dead']==True])
         alive.append(number_alive)
         dead.append(number_dead)
+        apoptotic.append(number_apoptotic)
 
     CLL_alive = pd.Series(alive, name="Cells_alive")
+    CLL_apoptotic = pd.Series(apoptotic, name = "Cells_apoptotic")
     CLL_dead = pd.Series(dead, name = "Cells_dead")
 
-    #Calculate viability =  CLL alive / (CLL alive + CLL dead)
+    #viability at time t =  CLL alive at time t / (CLL alive + CLL apoptotic + CLL dead) at time t
     viability = []
     for i in range(len(CLL_alive)):
-        number = (CLL_alive[i]/(CLL_alive[i]+CLL_dead[i]))*100
+        number = (CLL_alive[i]/(CLL_alive[i]+CLL_apoptotic[i]+CLL_dead[i]))*100
         viability.append(number)
 
     ####Remove day 4, 5, 11, 12 because of experimental
