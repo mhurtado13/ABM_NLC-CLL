@@ -13,10 +13,10 @@
 #- 'dead_phagocytosis_rate_NLCs'
 
 # Define the number of tasks running in parallel
-NUM_THREADS=2
+NUM_TASKS=2
 
 # Define the number replicates for bootstrapping 
 NUM_REPLICATES=2
 
 # Parameter exploration
-python scripts/param_exploration.py $NUM_THREADS $NUM_REPLICATES 
+python scripts/param_exploration.py $NUM_TASKS $NUM_REPLICATES 

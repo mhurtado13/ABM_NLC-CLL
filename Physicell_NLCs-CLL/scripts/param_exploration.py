@@ -20,7 +20,7 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
 
 default_values = list(input.values())
 
-explore_values = [10, 40, 60, 80, 100, 130]
+explore_values = [0, 1, 3, 5, 7, 9, 10]
 
 def reset_values(data, values_def):        
     for i, key in enumerate(data.keys()):

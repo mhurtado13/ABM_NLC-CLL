@@ -25,8 +25,8 @@ class calibrationProb(Problem):
         
     def _evaluate(self, x, out):
         
-        x = tuple(x.itertuples(index=False, name=None))
-
+        x = tuple(tuple(row) for row in x.tolist())
+            
         thread_params = []
 
         if num_tasks >= pop_size:
