@@ -73,7 +73,7 @@ def model_simulation(input_file_path, replicates, *args):
         # Check that the Physicell ran successfully
         if proc.returncode != 0:
             print("Error running Physicell")
-            print("Physicell error for following parameters: " + str(values))
+            print("Physicell error for parameters: " + str(values))
             continue
 
         res = collect(output_folder, xml_file) #We collect the data at each iteration
@@ -129,9 +129,9 @@ for parameter in input.keys():
     params = [(("config/NLC_CLL.xml", n_replicates) + thread_params[contador]) for contador in range(len(vals))]
     res = pool.starmap(model_simulation, params)
     results.extend(res)
-    pool.join()
 
 pool.close()
+pool.join()
 
 print("Pool closed")
 print("Everything done! Results are saved in the ./data_output folder")
