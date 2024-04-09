@@ -1,9 +1,6 @@
-from SALib.sample import latin, sobol
+from SALib.sample import sobol
 import pandas as pd
 import numpy as np
-import sys
-
-nsamples = int(sys.argv[1])
 
 def sobol_sampling(nsamples):
 
