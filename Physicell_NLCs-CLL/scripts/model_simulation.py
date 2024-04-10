@@ -10,7 +10,7 @@ def run_model(input_file_path, replicates, *args):
     
     thread = args[0] #Extract in which thread we are
     values = args[1:]
-
+    errors = []
     tree = ET.parse(input_file_path) #Load xml file
     root = tree.getroot()
 
@@ -68,6 +68,7 @@ def run_model(input_file_path, replicates, *args):
         if proc.returncode != 0:
             print("Error running Physicell")
             print("Physicell error for parameters: " + str(values))
+            errors.append(values)
             continue
 
         res = collect(output_folder, xml_file) #We collect the data at each iteration
@@ -77,4 +78,4 @@ def run_model(input_file_path, replicates, *args):
 
     print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
 
-    return viability, concentration
+    return viability, concentration, errors

@@ -53,11 +53,18 @@ print("Everything done! Results are saved in the ./data_output folder")
 #Initialize viability and concentration vectors with first results
 viability = results[0][0]
 concentration = results[0][1]
-
+param_error = []
 for i in range(1, len(results)):
-    via, conc = results[i]
+    via, conc, err = results[i]
     viability = pd.concat([viability, via], axis=1, ignore_index=True) #concatenating in the same order as explore_values
     concentration = pd.concat([concentration, conc], axis=1, ignore_index=True) #concatenating in the same order as explore_values
+    param_error.extend(err)
 
 viability.to_csv('data_output/viability_exploration.csv', index=False, header=True)
 concentration.to_csv('data_output/concentration_exploration.csv', index=False, header=True)
+
+if param_error:
+    print("Physicell errors for parameters:\n" + str(param_error))
+else:
+    print("All parameters were evaluated succesfully. Go to sleep :)")
+
