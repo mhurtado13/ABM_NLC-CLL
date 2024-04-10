@@ -54,12 +54,10 @@ def collect(dir_output, config_file):
 
     viability = pd.Series(viability, name = "CLL viability")
 
-    #Cells alive / Volume
-    volumen = 0.0000648 #cm3 648x10**-7
-
+    #concentration at time t =  CLL alive at time t / (CLL initial)
     concentration = []
-    for i in CLL_alive:
-        number = round(i/volumen,2)*100
+    for i in range(len(CLL_alive)):
+        number = (CLL_alive[i]/CLL_initial)*100
         concentration.append(number)
 
     ####Remove day 4, 5, 11, 12 because of experimental
