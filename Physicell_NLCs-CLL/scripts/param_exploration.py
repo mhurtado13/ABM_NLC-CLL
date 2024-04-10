@@ -27,25 +27,22 @@ def reset_values(data, values_def):
         data[key] = values_def[i]
 
 results = []
+x = []
+thread_params = []
+
 for parameter in input.keys():
-    x = []
     for i in explore_values:
         input[parameter] = i
         x.append(tuple(input.values()))
         reset_values(input, default_values)
-    
-    thread_params = []
-    if num_tasks >= len(explore_values):
-        for thread_id, param in zip(range(num_tasks), x):
-            thread_params.append((thread_id,) + param)
-    else:
-        for i, param in enumerate(x):
-            thread_id = i % num_tasks + 1
-            thread_params.append((thread_id,) + param)
 
-    params = [(("config/NLC_CLL.xml", n_replicates) + thread_params[contador]) for contador in range(len(explore_values))]
-    res = pool.starmap(run_model, params)
-    results.extend(res)
+for i, param in enumerate(x):
+        thread_id = i % num_tasks + 1
+        thread_params.append((thread_id,) + param)
+
+params = [(("config/NLC_CLL.xml", n_replicates) + thread_params[contador]) for contador in range(len(thread_params))]
+res = pool.starmap(run_model, params)
+results.extend(res)
 
 pool.close()
 pool.join()
