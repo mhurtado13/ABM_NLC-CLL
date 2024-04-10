@@ -17,13 +17,9 @@ samples_sobol_all = tuple(samples_sobol_all.itertuples(index=False, name=None))
 
 thread_params = []
 
-if num_tasks >= len(samples_sobol_all):
-    for thread_id, param in zip(range(num_tasks), samples_sobol_all):
-        thread_params.append((thread_id,) + param)
-else:
-    for i, param in enumerate(samples_sobol_all):
-        thread_id = i % num_tasks + 1
-        thread_params.append((thread_id,) + param)
+for i, param in enumerate(samples_sobol_all):
+    thread_id = i % num_tasks + 1
+    thread_params.append((thread_id,) + param)
 
 params = [(("config/NLC_CLL.xml", n_replicates) + thread_params[contador]) for contador in range(len(thread_params))]
 results = pool.starmap(run_model, params)

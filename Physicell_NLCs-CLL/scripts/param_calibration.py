@@ -29,13 +29,9 @@ class calibrationProb(Problem):
             
         thread_params = []
 
-        if num_tasks >= pop_size:
-            for thread_id, param in zip(range(num_tasks), x):
-                thread_params.append((thread_id,) + param)
-        else:
-            for i, param in enumerate(x):
-                thread_id = i % num_tasks + 1
-                thread_params.append((thread_id,) + param)
+        for i, param in enumerate(x):
+            thread_id = i % num_tasks + 1
+            thread_params.append((thread_id,) + param)
 
         params = [(("config/NLC_CLL.xml", n_replicates) + thread_params[i]) for i in range(pop_size)]
         results = pool.starmap(run_model, params)
