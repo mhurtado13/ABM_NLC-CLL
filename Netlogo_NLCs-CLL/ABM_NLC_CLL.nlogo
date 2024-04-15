@@ -103,6 +103,8 @@ Macrophages-own[
 ;;;;;;;;;;;;;;;;;
 ;;;;; SETUP ;;;;;
 ;;;;;;;;;;;;;;;;;
+;; export a 30 frame movie of the view
+extensions [vid]
 
 to setup
   clear-all
@@ -113,6 +115,12 @@ to setup
   setup-Monocytes
   setup-NeedSignalCancerCells
   setup-ApoCancerCells
+  vid:start-recorder
+  vid:record-view ;; show the initial state
+  repeat 100
+  [ go
+    vid:record-view ]
+  vid:save-recording "out.mp4"
 end
 
 to headless-setup
@@ -580,12 +588,14 @@ to outputs
   set nb-DeadCancerCells count DeadCancerCells
   set nb-monocytes-init ceiling (prop-monocytes-init * nb-cancer-cells-init / 100)
 end
+
+
 @#$#@#$#@
 GRAPHICS-WINDOW
 750
 10
-1565
-826
+1537
+798
 -1
 -1
 7.02
@@ -598,10 +608,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--57
-57
--57
-57
+-55
+55
+-55
+55
 0
 0
 1
@@ -1550,7 +1560,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.1.0
+NetLogo 6.4.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@

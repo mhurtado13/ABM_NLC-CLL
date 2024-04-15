@@ -18,7 +18,7 @@ def collect(dir_output, config_file):
         positions.append(hours)
 
     #Initial CLL cells
-    initial = timesteps[0].get_cell_df(states=2)
+    initial = timesteps[0].get_cell_df(states=1)
     CLL_initial = len(initial[(initial['cell_type']=="cancer")])
     apoptotic_initial = len(initial[(initial['cell_type']=="apoptotic")])
 
@@ -31,7 +31,7 @@ def collect(dir_output, config_file):
     dead = [0]
     apoptotic = [apoptotic_initial]
     for i in range(1, len(positions)):
-        step = timesteps[positions[i]].get_cell_df(states=2)
+        step = timesteps[positions[i]].get_cell_df(states=1)
         number_alive = len(step[(step['cell_type']=='cancer')&(step['dead']==False)])
         number_apoptotic = len(step[(step['cell_type']=='apoptotic')&(step['dead']==False)])
         number_dead = len(step[step['dead']==True])
