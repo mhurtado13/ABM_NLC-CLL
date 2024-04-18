@@ -3,6 +3,7 @@ import sys
 from multiprocessing.pool import ThreadPool
 from multiprocessing import Pool
 from model_simulation import run_model
+import numpy as np
 
 num_tasks = int(sys.argv[1])
 n_replicates = int(sys.argv[2])
@@ -20,7 +21,8 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
 
 default_values = list(input.values())
 
-explore_values = [0, 1, 3, 5, 7, 9, 10]
+set = np.round(list(np.linspace(0, 1, 10)), 2)
+explore_values = set + [3, 5, 7, 9, 10]
 
 def reset_values(data, values_def):        
     for i, key in enumerate(data.keys()):
