@@ -13,7 +13,7 @@ pool = ThreadPool(num_tasks)
 input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_cancer': 5e-5,
                   'speed_monocytes':1.0, 'dead_phagocytosis_rate_monocytes':25e-2, 'speed_macrophages':1.0,
                   'dead_phagocytosis_rate_macrophages':92e-2, 'secretion_rate_NLCs':1.0, 'speed_NLCs':1.0,
-                  'dead_phagocytosis_rate_NLCs':4e-2}
+                  'dead_phagocytosis_rate_NLCs':4e-2, 'death_rate_apoptotic':3e-3, 'secretion_rate_apoptotic': 1.0}
 
 #death rate apoptotic cells
 #number of initial apoptotic cells 
@@ -21,7 +21,7 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
 
 default_values = list(input.values())
 
-set = np.round(list(np.linspace(0, 1, 10)), 2)
+set = list(np.round(np.linspace(0, 1, 10), 2))
 explore_values = set + [3, 5, 7, 9, 10]
 
 def reset_values(data, values_def):        

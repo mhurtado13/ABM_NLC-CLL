@@ -25,7 +25,8 @@ def run_model(input_file_path, replicates, *args):
     param_behaviors = {'cancer':{'uptake_rate': 0, 'speed': 1, 'transformation_rate': 2},
                     'monocytes':{'speed': 3, 'dead_phagocytosis_rate': 4},
                     'macrophages':{'speed': 5, 'dead_phagocytosis_rate': 6},
-                    'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9}}
+                    'NLCs': {'secretion_rate': 7, 'speed': 8, 'dead_phagocytosis_rate': 9},
+                    'apoptotic':{'death_rate':10, 'secretion_rate':11}}
         
     for i, celltype in enumerate(param_behaviors.keys()): #i = number of keys name and celltype = cell type
         for param, column in param_behaviors[celltype].items(): #param = parameter name and column = column number
@@ -41,6 +42,14 @@ def run_model(input_file_path, replicates, *args):
                 param_value = values[column] #Extract each value [i, col_index]
                 param_element = root.find(f".//*[@name='{celltype}']//*[@name='anti-apoptotic factor']//{param}") #Find the param name in XML file
                 param_element.text = str(param_value)
+            elif celltype == 'apoptotic' and param == 'death_rate':
+                param_value = values[column]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='apoptosis']//{param}")
+                param_element.text = str(param_value)
+            elif celltype == 'apoptotic' and param == 'secretion_rate':
+                param_value = values[column]
+                param_element = root.find(f".//*[@name='{celltype}']//*[@name='debris']//{param}")
+                param_element.text = str(param_value)    
             else:
                 param_value = values[column] #Extract each value [i, col_index]
                 param_element = root.find(f".//*[@name='{celltype}']//{param}") #Find the param name in XML file
@@ -49,33 +58,41 @@ def run_model(input_file_path, replicates, *args):
     # Define the command to call your C++ software with the updated XML as input
     command = ["./project", xml_file]
     data = pd.DataFrame()        
-    for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
-        # Random seed for each simulation
-        param_element = root.find(".//random_seed") #Find the random seed in XML file
-        param_element.text = str(random.randint(0,4294967295))
+    terminate = False
+    while terminate == False:
+        for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
+            # Random seed for each simulation
+            param_element = root.find(".//random_seed") #Find the random seed in XML file
+            param_element.text = str(random.randint(0,4294967295))
 
-        # Write the updated XML to a string
-        updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
+            # Write the updated XML to a string
+            updated_xml_str = ET.tostring(root, encoding="unicode", method="xml")
 
-        with open(xml_file, "w") as file:
-            file.write(updated_xml_str)
+            with open(xml_file, "w") as file:
+                file.write(updated_xml_str)
 
-        # Call the C++ software using subprocess
-        proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = proc.communicate()
+            # Call the C++ software using subprocess
+            proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            stdout, stderr = proc.communicate()
 
-        # Check that the Physicell ran successfully
-        if proc.returncode != 0:
-            print("Error running Physicell")
-            print("Physicell error for parameters: " + str(values))
-            errors.append(values)
-            continue
+            # Check that the Physicell ran successfully
+            if proc.returncode != 0:
+                print("Error running Physicell")
+                print("Physicell error for parameters: " + str(values))
+                errors.append(values)
+                terminate = True
 
-        res = collect(output_folder, xml_file) #We collect the data at each iteration
-        data = pd.concat([res, data], axis=1)
+            if terminate == False:
+                res = collect(output_folder, xml_file) #We collect the data at each iteration
+                data = pd.concat([res, data], axis=1)
 
-    viability, concentration = merge(data) #Merge data of replicates 
+    if terminate == False:
+        viability, concentration = merge(data) #Merge data of replicates 
+        print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
+    else:
+        viability = pd.Series([0] * 10)
+        concentration = pd.Series([0] * 10)
+        print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " did not run succesfully... completing with 0s")
 
-    print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
 
     return viability, concentration, errors
