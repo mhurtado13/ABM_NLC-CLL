@@ -1,14 +1,10 @@
-import anndata as ad  
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 import numpy as np
 import pandas as pd
 import pcdl
-import os
 
 #config_file = 'config/NLC_CLL.xml'
 def collect(dir_output, config_file):
-    mcdsts = pcdl.TimeSeries(dir_output, settingxml=config_file) 
+    mcdsts = pcdl.TimeSeries(dir_output, settingxml=config_file, graph=False) 
     timesteps = mcdsts.get_mcds_list()
 
     #Extract positions corresponding to days 1-13
