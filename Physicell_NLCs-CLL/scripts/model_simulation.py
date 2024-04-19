@@ -59,7 +59,8 @@ def run_model(input_file_path, replicates, *args):
     command = ["./project", xml_file]
     data = pd.DataFrame()        
     terminate = False
-    while terminate == False:
+    loop = True
+    while terminate == False or loop == True:
         for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
             # Random seed for each simulation
             param_element = root.find(".//random_seed") #Find the random seed in XML file
@@ -81,11 +82,14 @@ def run_model(input_file_path, replicates, *args):
                 print("Physicell error for parameters: " + str(values))
                 errors.append(values)
                 terminate = True
+                break #exit loop to avoid running all replicates if there is an error in simulation 
 
             if terminate == False:
                 res = collect(output_folder, xml_file) #We collect the data at each iteration
                 data = pd.concat([res, data], axis=1)
-
+        
+        loop = False #when the loop finishes exit the while, this is used when terminate == True, meaning that it run succesfully     
+          
     if terminate == False:
         viability, concentration = merge(data) #Merge data of replicates 
         print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
