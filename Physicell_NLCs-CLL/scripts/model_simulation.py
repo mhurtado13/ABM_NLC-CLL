@@ -60,7 +60,7 @@ def run_model(input_file_path, replicates, *args):
     data = pd.DataFrame()        
     terminate = False
     loop = True
-    while terminate == False or loop == True:
+    while not terminate and loop:
         for i in range(replicates): #replicates is for bootstrapping, we run the simulation with updated value # (replicates) times
             # Random seed for each simulation
             param_element = root.find(".//random_seed") #Find the random seed in XML file
