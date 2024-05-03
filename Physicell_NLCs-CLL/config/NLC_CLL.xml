@@ -238,8 +238,7 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <sample conserved="false" units="dimensionless" description="">1.0</sample>
-            </custom_data>
+          </custom_data>
         </cell_definition>
         <cell_definition name="monocytes" ID="1">
             <phenotype>
@@ -381,8 +380,7 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <sample conserved="false" units="dimensionless" description="">1.0</sample>
-            </custom_data>
+          </custom_data>
         </cell_definition>
         <cell_definition name="macrophages" ID="2">
             <phenotype>
@@ -524,8 +522,7 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <sample conserved="false" units="dimensionless" description="">1.0</sample>
-            </custom_data>
+          </custom_data>
         </cell_definition>
         <cell_definition name="NLCs" ID="3">
             <phenotype>
@@ -667,8 +664,7 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <sample conserved="false" units="dimensionless" description="">1.0</sample>
-            </custom_data>
+          </custom_data>
         </cell_definition>
         <cell_definition name="apoptotic" ID="4">
             <phenotype>
@@ -810,8 +806,7 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <sample conserved="false" units="dimensionless" description="">0.0</sample>
-            </custom_data>
+          </custom_data>
         </cell_definition>
     </cell_definitions>
 
