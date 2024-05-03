@@ -4,7 +4,7 @@ import pcdl
 
 #config_file = 'config/NLC_CLL.xml'
 def collect(dir_output, config_file):
-    mcdsts = pcdl.TimeSeries(dir_output, settingxml=config_file, graph=False, verbose = False) 
+    mcdsts = pcdl.TimeSeries(dir_output, settingxml=config_file, verbose = False) 
     timesteps = mcdsts.get_mcds_list()
 
     #Extract positions corresponding to days 1-13

@@ -13,7 +13,7 @@ def run_model(input_file_path, replicates, *args):
     errors = []
     tree = ET.parse(input_file_path) #Load xml file
     root = tree.getroot()
-
+    print("Running simulation with parameters " + str(values) + "in node ", str(thread))
     output_folder = "output_" + str(thread)
     param_element = root.find(".//save/folder") #Find the random seed in XML file
     param_element.text = output_folder
@@ -73,8 +73,8 @@ def run_model(input_file_path, replicates, *args):
                 file.write(updated_xml_str)
 
             # Call the C++ software using subprocess
-            proc = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            stdout, stderr = proc.communicate()
+            with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as proc:
+                stdout, stderr = proc.communicate()
 
             # Check that the Physicell ran successfully
             if proc.returncode != 0:
@@ -85,18 +85,19 @@ def run_model(input_file_path, replicates, *args):
                 break #exit loop to avoid running all replicates if there is an error in simulation 
 
             if terminate == False:
+                print("Collecting data in node " + str(thread))
                 res = collect(output_folder, xml_file) #We collect the data at each iteration
                 data = pd.concat([res, data], axis=1)
         
-        loop = False #when the loop finishes exit the while, this is used when terminate == True, meaning that it run succesfully     
+        loop = False #when the loop finishes exit the while, this is used when terminate == False, meaning that it run succesfully     
           
     if terminate == False:
         viability, concentration = merge(data) #Merge data of replicates 
-        print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
+        print("Physicell simulation for node " + str(thread) + " with parameters " + str(values) + " completed succesfully! :)")
     else:
         viability = pd.Series([0] * 10)
         concentration = pd.Series([0] * 10)
-        print("Physicell simulation for pool " + str(thread) + " with parameters " + str(values) + " did not run succesfully... completing with 0s")
+        print("Physicell simulation for node " + str(thread) + " with parameters " + str(values) + " did not run succesfully... completing with 0s")
 
 
     return viability, concentration, errors
