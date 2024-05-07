@@ -21,8 +21,7 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
 
 default_values = list(input.values())
 
-set = list(np.round(np.linspace(0, 1, 10), 2))
-explore_values = set + [3, 5, 7, 9, 10]
+explore_values = list(np.round(np.linspace(0, 1, 10), 2))
 
 def reset_values(data, values_def):        
     for i, key in enumerate(data.keys()):
