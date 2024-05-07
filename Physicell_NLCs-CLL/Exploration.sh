@@ -12,6 +12,7 @@
 
 module purge
 module load devel/python/Anaconda3-2022.05
+conda init
 conda activate myenv
 
 # Define the number of tasks running in parallel
