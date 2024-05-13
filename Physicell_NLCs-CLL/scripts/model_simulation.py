@@ -80,6 +80,7 @@ def run_model(input_file_path, replicates, *args):
             if proc.returncode != 0:
                 print("Error running Physicell")
                 print("Physicell error for parameters: " + str(values))
+                print(stderr)
                 errors.append(values)
                 terminate = True
                 break #exit loop to avoid running all replicates if there is an error in simulation 

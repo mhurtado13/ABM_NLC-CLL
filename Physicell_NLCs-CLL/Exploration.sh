@@ -10,11 +10,6 @@
 #SBATCH -o /home/mhurtado/work/ABM_NLC-CLL/logs/%x.o
 #SBATCH -e /home/mhurtado/work/ABM_NLC-CLL/logs/%x.e
 
-module purge
-module load devel/python/Anaconda3-2022.05
-conda init
-conda activate myenv
-
 # Define the number of tasks running in parallel
 NUM_TASKS=22
 
