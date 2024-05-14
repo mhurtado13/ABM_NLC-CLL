@@ -21,7 +21,7 @@ input = {'uptake_rate_cancer': 1.0, 'speed_cancer': 1.0, 'transformation_rate_ca
 
 default_values = list(input.values())
 
-explore_values = list(np.round(np.linspace(0, 1, 10), 2))
+explore_values = list(np.round(np.linspace(0, 1, 20), 2))
 #explore_values = [0,1]
 
 def reset_values(data, values_def):        
@@ -68,5 +68,5 @@ concentration.to_csv('data_output/concentration_exploration.csv', index=False, h
 if param_error:
     print("Physicell errors for parameters:\n" + str(param_error))
 else:
-    print("All parameters were evaluated succesfully. Go to sleep :)")
+    print("All parameters were evaluated succesfully.")
 
