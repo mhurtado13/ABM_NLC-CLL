@@ -1042,7 +1042,7 @@
 
     <initial_conditions>
         <cell_positions type="csv" enabled="true">
-            <folder>/home/marcelo.hurtado/Documents/ABM_NLC-CLL/config</folder>
+            <folder>/home/marcelo/Documents/ABM_NLC-CLL/config</folder>
             <filename>cells.csv</filename>
         </cell_positions>
     </initial_conditions>
@@ -1050,7 +1050,7 @@
     <cell_rules>
         <rulesets>
             <ruleset protocol="CBHG" version="2.0" format="csv" enabled="true">
-                <folder>/home/marcelo.hurtado/Documents/ABM_NLC-CLL/config</folder>
+                <folder>/home/marcelo/Documents/ABM_NLC-CLL/config</folder>
                 <filename>rules0.csv</filename>
             </ruleset>
         </rulesets>
