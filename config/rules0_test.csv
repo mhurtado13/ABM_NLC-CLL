@@ -5,7 +5,6 @@ macrophages,stress,increases,phagocytose apoptotic,20,5,8,0
 macrophages,stress,increases,phagocytose dead,20,5,8,0
 NLCs,stress,increases,phagocytose apoptotic,2,5,8,0
 NLCs,stress,increases,phagocytose dead,2,5,8,0
-cancer,damage,increases,transform to apoptotic,8e-4,0.5,4,0
 NLCs,contact with cancer,increases,antiapoptotic secretion,5,1,50,0
 cancer,antiapoptotic,decreases,transform to apoptotic,8e-10,25e-1,10,0
 monocytes,cytokines,increases,transform to macrophages,3e-4,5,5,0
