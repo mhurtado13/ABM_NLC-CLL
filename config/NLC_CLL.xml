@@ -800,7 +800,7 @@
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">3</speed>
+                    <speed units="micron/min">2</speed>
                     <persistence_time units="min">5</persistence_time>
                     <migration_bias units="dimensionless">5e-1</migration_bias>
                     <options>
