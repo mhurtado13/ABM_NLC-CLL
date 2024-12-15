@@ -1,0 +1,106 @@
+Signals: 
+=======
+0 : cytokines
+1 : antiapoptotic
+2 : stress
+3 : intracellular cytokines
+4 : intracellular antiapoptotic
+5 : intracellular stress
+6 : cytokines gradient
+7 : antiapoptotic gradient
+8 : stress gradient
+9 : pressure
+10 : volume
+11 : contact with cancer
+12 : contact with monocytes
+13 : contact with macrophages
+14 : contact with NLCs
+15 : contact with apoptotic
+16 : contact with dead
+17 : contact with live cell
+18 : contact with dead cell
+19 : contact with basement membrane
+20 : damage
+21 : dead
+22 : total attack time
+23 : time
+24 : apoptotic
+25 : necrotic
+
+Behaviors: 
+=========
+0 : cytokines secretion
+1 : antiapoptotic secretion
+2 : stress secretion
+3 : cytokines secretion target
+4 : antiapoptotic secretion target
+5 : stress secretion target
+6 : cytokines uptake
+7 : antiapoptotic uptake
+8 : stress uptake
+9 : cytokines export
+10 : antiapoptotic export
+11 : stress export
+12 : cycle entry
+13 : exit from cycle phase 1
+14 : exit from cycle phase 2
+15 : exit from cycle phase 3
+16 : exit from cycle phase 4
+17 : exit from cycle phase 5
+18 : apoptosis
+19 : necrosis
+20 : migration speed
+21 : migration bias
+22 : migration persistence time
+23 : chemotactic response to cytokines
+24 : chemotactic response to antiapoptotic
+25 : chemotactic response to stress
+26 : cell-cell adhesion
+27 : cell-cell adhesion elastic constant
+28 : adhesive affinity to cancer
+29 : adhesive affinity to monocytes
+30 : adhesive affinity to macrophages
+31 : adhesive affinity to NLCs
+32 : adhesive affinity to apoptotic
+33 : adhesive affinity to dead
+34 : relative maximum adhesion distance
+35 : cell-cell repulsion
+36 : cell-BM adhesion
+37 : cell-BM repulsion
+38 : phagocytose dead cell
+39 : phagocytose cancer
+40 : phagocytose monocytes
+41 : phagocytose macrophages
+42 : phagocytose NLCs
+43 : phagocytose apoptotic
+44 : phagocytose dead
+45 : attack cancer
+46 : attack monocytes
+47 : attack macrophages
+48 : attack NLCs
+49 : attack apoptotic
+50 : attack dead
+51 : fuse to cancer
+52 : fuse to monocytes
+53 : fuse to macrophages
+54 : fuse to NLCs
+55 : fuse to apoptotic
+56 : fuse to dead
+57 : transform to cancer
+58 : transform to monocytes
+59 : transform to macrophages
+60 : transform to NLCs
+61 : transform to apoptotic
+62 : transform to dead
+63 : is_movable
+64 : immunogenicity to cancer
+65 : immunogenicity to monocytes
+66 : immunogenicity to macrophages
+67 : immunogenicity to NLCs
+68 : immunogenicity to apoptotic
+69 : immunogenicity to dead
+70 : cell attachment rate
+71 : cell detachment rate
+72 : maximum number of cell attachments
+73 : damage rate
+

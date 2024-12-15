@@ -1,0 +1,29 @@
+Cell Hypothesis Rules (detailed)
+
+In cancer cells:
+contact with NLCs decreases migration speed from 2 towards 0 with a Hill response, with half-max 0.5 and Hill power 10.
+damage increases transform to apoptotic from 8e-05 towards 0.0008 with a Hill response, with half-max 0.5 and Hill power 4.
+antiapoptotic decreases transform to apoptotic from 8e-05 towards 8e-10 with a Hill response, with half-max 2.5 and Hill power 10.
+
+In monocytes cells:
+stress increases phagocytose apoptotic from 2.5 towards 5 with a Hill response, with half-max 5 and Hill power 8.
+stress increases phagocytose dead from 2.5 towards 5 with a Hill response, with half-max 5 and Hill power 8.
+cytokines increases transform to macrophages from 2e-12 towards 0.0003 with a Hill response, with half-max 5 and Hill power 5.
+intracellular stress increases transform to NLCs from 3e-15 towards 0.0001 with a Hill response, with half-max 3200 and Hill power 10.
+intracellular cytokines increases transform to NLCs from 3e-15 towards 0.0001 with a Hill response, with half-max 25000 and Hill power 10.
+
+In macrophages cells:
+stress increases phagocytose apoptotic from 9.2 towards 20 with a Hill response, with half-max 5 and Hill power 8.
+stress increases phagocytose dead from 9.2 towards 20 with a Hill response, with half-max 5 and Hill power 8.
+intracellular stress increases transform to NLCs from 3e-16 towards 0.0001 with a Hill response, with half-max 3200 and Hill power 10.
+intracellular cytokines increases transform to NLCs from 3e-16 towards 0.0001 with a Hill response, with half-max 25000 and Hill power 10.
+
+In NLCs cells:
+stress increases phagocytose apoptotic from 0.4 towards 2 with a Hill response, with half-max 5 and Hill power 8.
+stress increases phagocytose dead from 0.4 towards 2 with a Hill response, with half-max 5 and Hill power 8.
+contact with cancer increases antiapoptotic secretion from 1 towards 5 with a Hill response, with half-max 1 and Hill power 50.
+
+In apoptotic cells:
+
+In dead cells:
+

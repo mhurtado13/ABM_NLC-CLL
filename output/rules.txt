@@ -1,0 +1,29 @@
+Cell Hypothesis Rules
+
+In cancer cells:
+contact with NLCs decreases migration speed
+damage increases transform to apoptotic
+antiapoptotic decreases transform to apoptotic
+
+In monocytes cells:
+stress increases phagocytose apoptotic
+stress increases phagocytose dead
+cytokines increases transform to macrophages
+intracellular stress increases transform to NLCs
+intracellular cytokines increases transform to NLCs
+
+In macrophages cells:
+stress increases phagocytose apoptotic
+stress increases phagocytose dead
+intracellular stress increases transform to NLCs
+intracellular cytokines increases transform to NLCs
+
+In NLCs cells:
+stress increases phagocytose apoptotic
+stress increases phagocytose dead
+contact with cancer increases antiapoptotic secretion
+
+In apoptotic cells:
+
+In dead cells:
+
