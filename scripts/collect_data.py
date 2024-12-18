@@ -17,11 +17,12 @@ def collect_data(dir_output, config_file):
     initial = timesteps[0].get_cell_df(states=1)
 
     ######## Calculate CLL viability and concentration
-    CLL_initial = len(initial[(initial['cell_type']=="cancer")])
+    alive_initial = len(initial[(initial['cell_type']=="cancer")])
     apoptotic_initial = len(initial[(initial['cell_type']=="apoptotic")])
     dead_initial = len(initial[(initial['cell_type']=="dead")])
-
-    alive = [CLL_initial]
+    CLL_initial = alive_initial + apoptotic_initial + dead_initial
+    
+    alive = [alive_initial]
     dead = [dead_initial]
     apoptotic = [apoptotic_initial]
 
@@ -49,7 +50,7 @@ def collect_data(dir_output, config_file):
     #concentration at time t =  CLL alive at time t / (CLL initial)
     concentration = []
     for i in range(len(CLL_alive)):
-        number = (CLL_alive[i]/CLL_initial)*100
+        number = ((CLL_alive[i] + CLL_apoptotic[i] + CLL_dead[i])/CLL_initial)*100
         concentration.append(number)
 
     concentration = pd.Series(concentration, name = "CLL concentration")
