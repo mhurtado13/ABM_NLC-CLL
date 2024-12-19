@@ -47,7 +47,7 @@ def collect_data(dir_output, config_file):
 
     viability = pd.Series(viability, name = "CLL viability")
 
-    #concentration at time t =  CLL alive at time t / (CLL initial)
+    #concentration at time t =  CLL at time t / (CLL initial)
     concentration = []
     for i in range(len(CLL_alive)):
         number = ((CLL_alive[i] + CLL_apoptotic[i] + CLL_dead[i])/CLL_initial)*100
