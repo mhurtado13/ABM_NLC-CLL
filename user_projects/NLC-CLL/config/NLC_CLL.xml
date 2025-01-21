@@ -1042,8 +1042,8 @@
 
     <initial_conditions>
         <cell_positions type="csv" enabled="true">
-            <folder>/home/marcelo.hurtado/Documents/ABM_NLC-CLL/config</folder>
-            <filename>cells_CLL.csv</filename>
+            <folder>config</folder>
+            <filename>cells.csv</filename>
         </cell_positions>
     </initial_conditions>
 
